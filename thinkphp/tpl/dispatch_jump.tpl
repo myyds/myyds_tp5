@@ -21,19 +21,19 @@
 
         <?php switch ($code) {?>
             <?php case 1:?>
-            <img src="/static/xiao.jpg">
+            
             <p class="success"><?php echo(strip_tags($msg));?></p>
             <?php break;?>
             <?php case 0:?>
             <!-- <h1>:(</h1> -->
-            <img src="/static/ku.jpg" alt="" />
+            
 
             <p class="error"><?php echo(strip_tags($msg));?></p>
             <?php break;?>
         <?php } ?>
         <p class="detail"></p>
         <p class="jump">
-            页面自动 <a id="href" href="<?php echo($url);?>">跳转</a> 等待时间： <b id="wait"><?php echo($wait);?></b>
+            飞速赶回基地 <a id="href" href="<?php echo($url);?>">加速</a> 剩余飞行时间： <b id="wait"><?php echo($wait);?></b>
         </p>
     </div>
     <script type="text/javascript">
