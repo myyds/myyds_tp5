@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>用户信息表</title>
+	<link rel="stylesheet" href="/static/css/main.css">
+<body>
+<div class="content">
+	<div class="add">
+		<form action="{:url('index/do_select_theme')}" method="post" enctype="multipart/form-data" class="form-style">
+
+
+
+
+	<select name="theme_id">
+               <option value="">请选择选题</option>
+                                     {volist name="theme_id" id="vo"}
+                	<option value="{$vo.theme_id}">{$vo.theme_name} </option>
+                                                    {/volist}
+                	</select>
+
+
+
+
+
+
+<input type="hidden" name="id"  value="{$info.id}">
+<input type="submit" value="确定修改">
+
+
+</form>
+	</div>
+</div>
+
+
+</head>
+
+</body>
+</html>
+
