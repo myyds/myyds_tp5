@@ -490,12 +490,13 @@ public function form()
 
 public function show_admin()
     {   
-        $result = Db::name('user')->paginate(10);
+        // $result = Db::name('user')->order('id desc')->paginate(10);
+        $result = Db::name('user')->order('id')->paginate(10);
         $page = $result->render();
         $this->assign('data_list',$result);
         $this->assign('page',$page);
 
-        $result1 = Db::name('teacher')->paginate(10);
+        $result1 = Db::name('teacher')->order('id')->paginate(10);
         $page1 = $result1->render();
         $this->assign('data_list1',$result1);
         $this->assign('page1',$page1);

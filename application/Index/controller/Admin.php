@@ -56,7 +56,7 @@ class Admin extends Controller
                   if($res){
                       $this->success('更新成功','index/show_admin');
                   }else{
-                      $this->error('更新成功!');
+                      $this->error('无更新内容!','index/show_admin');
                   }
               }
               public function edit_teacher_admin(){
@@ -85,7 +85,7 @@ class Admin extends Controller
                             if($res){
                                 $this->success('更新成功','index/show_admin');
                             }else{
-                                $this->error('更新成功!');
+                                $this->error('无更新内容!','index/show_admin');
                             }
                         }
                     }
