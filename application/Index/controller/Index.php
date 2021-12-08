@@ -500,6 +500,11 @@ public function show_admin()
         $page1 = $result1->render();
         $this->assign('data_list1',$result1);
         $this->assign('page1',$page1);
+
+        $result3 = Db::name('admin')->order('id')->paginate(10);
+        $page3 = $result->render();
+        $this->assign('data_list3',$result3);
+        $this->assign('page3',$page3);
         
         
 

@@ -28,6 +28,7 @@ class Admin extends Controller
            //管理员编辑用户信息
               if(request()->isPost()){
                   //接收传值
+                //   $data['id'] = input('id');
                   $data['name'] = input('name');
                   $data['sex'] = input('sex');
                   $data['age'] = input('age');

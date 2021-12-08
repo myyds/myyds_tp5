@@ -117,7 +117,8 @@
                         <div class="modal-footer" style="text-align: center;">
 
                             <button type="submit" class="btn btn-primary">确定</button>
-                        </div></form>
+                        </div>
+                    </form>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -143,15 +144,17 @@
 
 
 
-                    
 
-                    <!-- <li><a href="{:url('index/announcement')}">发布公告 <span class="sr-only">(current)</span></a></li> -->
 
-                
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="submit" class="btn btn-primary">确定</button>
-                </div></form></div>
+                        <!-- <li><a href="{:url('index/announcement')}">发布公告 <span class="sr-only">(current)</span></a></li> -->
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="submit" class="btn btn-primary">确定</button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <!-- /.modal-content -->
         </div>
@@ -206,108 +209,140 @@
                 <div>
 
                     <!-- Nav tabs -->
-                   
+
 
                     <!-- Tab panes -->
                     <!-- <div class="tab-content"> -->
                     <!-- //学生部分 -->
-                   
+
 
 
                     <body>
 
                         <ul id="myTab" class="nav nav-tabs">
-                          <li class="active">
-                            <a href="#home" data-toggle="tab">
+                            <li class="active">
+                                <a href="#home" data-toggle="tab">
                               用户
                             </a>
-                          </li>
-                          <li><a href="#ios" data-toggle="tab">管理</a></li>
-                          <li class="dropdown">
-                            <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">其他
+                            </li>
+                            <li><a href="#ios" data-toggle="tab">管理</a></li>
+                            <li class="dropdown">
+                                <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">其他
                               <b class="caret"></b>
                             </a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-                              <li><a href="#jmeter" tabindex="-1" data-toggle="tab">其他</a></li>
-                              <li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>
-                            </ul>
-                          </li>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                                    <li><a href="#jmeter" tabindex="-1" data-toggle="tab">管理员</a></li>
+                                    <li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>
+                                </ul>
+                            </li>
                         </ul>
                         <div id="myTabContent" class="tab-content">
-                          <div class="tab-pane fade in active" id="home">
-                            <div>
+                            <div class="tab-pane fade in active" id="home">
+                                <div>
 
-                                <!-- <table border="1" cellpadding="5" cellspacing="0"> -->
-                                <table class="table table-hover">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>姓名</th>
-                                        <th>性别</th>
-                                        <th>年龄</th>
-                                        <th>电话</th>
-                                        <th>操作</th>
-                                    </tr>
-                                    {volist name="data_list" id="vo"}
-                                    <tr>
-                                        <td>{$vo.id}</td>
-                                        <td>{$vo.name}</td>
-                                        <td>{if condition="$vo.sex eq '1'"}男{elseif condition="$vo.sex eq '2'"}女{else /}保密{/if}</td>
-                                        <td>{$vo.age}</td>
-                                        <td>{$vo.tel}</td>
-                                        <td><a href="{:url('admin/edit_user_admin',['id' => $vo['id']])}" class="btn btn-success btn-xs">
+                                    <!-- <table border="1" cellpadding="5" cellspacing="0"> -->
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>姓名</th>
+                                            <th>性别</th>
+                                            <th>年龄</th>
+                                            <th>电话</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        {volist name="data_list" id="vo"}
+                                        <tr>
+                                            <td>{$vo.id}</td>
+                                            <td>{$vo.name}</td>
+                                            <td>{if condition="$vo.sex eq '1'"}男{elseif condition="$vo.sex eq '2'"}女{else /}保密{/if}</td>
+                                            <td>{$vo.age}</td>
+                                            <td>{$vo.tel}</td>
+                                            <td><a href="{:url('admin/edit_user_admin',['id' => $vo['id']])}" class="btn btn-success btn-xs">
                               编辑</button> </a>&nbsp; &nbsp;<a href="{:url('index/del',['id' => $vo['id']])}" class="btn btn-danger btn-xs">
                               删除</button></a></td>
-                                    </tr>
-                                    {/volist}
-                                </table>
-                                <div>{$page}</div>
-                            </div></div>
-                          <div class="tab-pane fade" id="ios">
-                            <div>
-
-                                <!-- <table border="1" cellpadding="5" cellspacing="0"> -->
-                                <table class="table table-hover">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>姓名</th>
-                                        <th>电话</th>
-                                        <th>专业</th>
-                                        <th>操作</th>
-                                    </tr>
-                                    {volist name="data_list1" id="v1"}
-                                    <tr>
-                                        <td>{$v1.id}</td>
-                                        <td>{$v1.name}</td>
-                                        <td>{$v1.tel}</td>
-                                        <td>{$v1.major}</td>
-                                        <td><a href="{:url('admin/edit_teacher_admin',['id' => $v1['id']])}" class="btn btn-success btn-xs">编辑</a>&nbsp; &nbsp;
-                                            <a href="{:url('index/del_t',['id' => $v1['id']])}" class="btn btn-danger btn-xs">删除</a></td>
-                                    </tr>
-                                    {/volist}
-    
-    
-                                </table>
-                                <div>{$page1}</div>
-    
-    
-    
-    
-    
-    
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                    <div>{$page}</div>
+                                </div>
                             </div>
-                          </div>
-                          <div class="tab-pane fade" id="jmeter">
-                            <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
-                          </div>
-                          <div class="tab-pane fade" id="ejb">
-                            <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
-                            </p>
-                          </div>
-                        </div>
-                      
-                      </body>
+                            <div class="tab-pane fade" id="ios">
+                                <div>
 
-                  
+                                    <!-- <table border="1" cellpadding="5" cellspacing="0"> -->
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>姓名</th>
+                                            <th>电话</th>
+                                            <th>专业</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        {volist name="data_list1" id="v1"}
+                                        <tr>
+                                            <td>{$v1.id}</td>
+                                            <td>{$v1.name}</td>
+                                            <td>{$v1.tel}</td>
+                                            <td>{$v1.major}</td>
+                                            <td><a href="{:url('admin/edit_teacher_admin',['id' => $v1['id']])}" class="btn btn-success btn-xs">编辑</a>&nbsp; &nbsp;
+                                                <a href="{:url('index/del_t',['id' => $v1['id']])}" class="btn btn-danger btn-xs">删除</a></td>
+                                        </tr>
+                                        {/volist}
+
+
+                                    </table>
+                                    <div>{$page1}</div>
+
+
+
+
+
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="jmeter">
+                                <div>
+
+
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>姓名</th>
+
+                                            <th>公告</th>
+
+                                        </tr>
+                                        {volist name="data_list3" id="v3"}
+                                        <tr>
+                                            <td>{$v3.id}</td>
+                                            <td>{$v3.name}</td>
+                                            <td>{$v3.ad}</td>
+
+
+
+                                        </tr>
+                                        {/volist}
+
+
+                                    </table>
+                                    <div>{$page1}</div>
+
+
+
+
+
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="ejb">
+                                <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+                                </p>
+                            </div>
+                        </div>
+
+                    </body>
+
+
                 </div>
         </div>
     </div>
