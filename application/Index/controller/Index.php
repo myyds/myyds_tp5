@@ -523,7 +523,7 @@ public function show_admin()
 
 //显示教师页面
 public function show_teacher(){
-     $result= session('id_1'); 
+     $result= session::get('id_1'); 
      $data = Db::table('teacher')->where('id',$result)->find();
      
 
@@ -541,7 +541,7 @@ public function show_teacher(){
 public function show_user(){
 
 
-     $result = session('id'); 
+     $result = session::get('id'); 
      $data = Db::table('user')->where('id',$result)->find();
      
      $teacher=Db::table('theme')
@@ -588,26 +588,31 @@ public function do_updatapw_u(){
 
 
 
-public function updatapw_t(){
+// public function updatapw_t(){
     
-      if(request()->isGet()){
-            $id = input('id');
-            $info = Db::name('teacher')
-                    ->where('id',$id)
-                    ->find();
-            return $this->fetch('do_updatapw_t',array('info'=>$info));
-        }
+//       if(request()->isGet()){
+//             $id = input('id');
+//             $info = Db::name('teacher')
+//                     ->where('id',$id)
+//                     ->find();
+//             return $this->fetch('do_updatapw_t',array('info'=>$info));
+//         }
       
-}
+// }
 
 public function do_updatapw_t(){
+    $get = $this->request->get();
+    
+    
+    // 获取post上传的内容
 
     if(request()->isPost()){
-            
+            $id = input('id');
             $data['password'] = input('password');
+            
             //执行修改
             $res = Db::name('teacher')
-                    ->where('id',input('post.id'))
+                    ->where('id',$get['id'])
                     ->update($data);
             if($res){
                 $this->success('更新成功','index/show_teacher');
