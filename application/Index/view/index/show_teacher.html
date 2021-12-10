@@ -39,12 +39,13 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <a class="navbar-brand" href="#">用户管理系统</a>
             </div>
 
@@ -53,13 +54,17 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
                     <!-- <li><a href="{:url('index/edit_teacher')}?id={$data.id}">修改信息</a></li> -->
-                    <li><a href="#">校园风采</a></li>
-                    <li><a href="{:url('index/add_theme')}?id={$data.id}">添加选题</a></li>
+                    <li><a href="#">指标管理</a></li>
+                    <!-- <li><a href="{:url('index/add_theme')}?id={$data.id}">添加选题</a></li> -->
                     <li><a href="{:url('index/ud_th')}?id={$data.id}">选题管理</a></li>
-                    <li><a href="{:url('index/show_check')}?id={$data.id}">学生管理</a></li>
+                    <li><a href="{:url('index/show_check')}?id={$data.id}">用户管理</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal3">
+                            添加选题</a>
+                    </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -75,12 +80,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="#">
-                            <span style="color: red;"><i
-                                class="glyphicon glyphicon-user"></i></span> <strong> 教师编号</strong>{$data.id} <strong>姓名</strong> {$data.name}
+                            <span style="color: red;"><i class="glyphicon glyphicon-user"></i></span> <strong>
+                                管理员编号</strong>{$data.id} <strong>姓名</strong> {$data.name}
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">个人中心 <span class="caret"></span></a>
 
                         <!-- Button trigger modal -->
 
@@ -90,12 +96,14 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title" id="myModalLabel">修改密码</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="modal-body" style="text-align: center;">
-                                            <form action="{:url('index/do_updatapw_t')}?id={$data.id}" method="post" enctype="multipart/form-data" class="form-style">
+                                            <form action="{:url('index/do_updatapw_t')}?id={$data.id}" method="post"
+                                                enctype="multipart/form-data" class="form-style">
 
 
 
@@ -106,9 +114,17 @@
 
 
 
-                                                <br/> <br/>
+                                                <br /> <br />
                                                 <input type="hidden" name="id" value="{$info.id}">
-                                                <input type="submit" value="确定修改">
+
+
+                                                <div class="modal-footer" style="text-align: center;">
+                                                    <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">取消</button>
+
+                                                    <button type="submit" class="btn btn-primary">确定</button>
+                                                </div>
+                                                <!-- <input type="submit" value="确定修改"> -->
                                             </form>
                                         </div>
                                     </div>
@@ -116,23 +132,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
+                            aria-labelledby="myModalLabel">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title" id="myModalLabel">个人信息</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="modal-body" style="text-align: center;">
-                                            <form action="{:url('index/do_edit_teacher')}" method="post" enctype="multipart/form-data" class="form-style">
+                                            <form action="{:url('index/do_edit_teacher')}" method="post"
+                                                enctype="multipart/form-data" class="form-style">
 
                                                 <td>姓名 <input type="text" name="name" value="{$data.name}"></td><br><br>
 
 
 
 
-                                                <td>专业 <input type="text" name="major" value="{$data.major}"></td><br><br>
+                                                <td>专业 <input type="text" name="major" value="{$data.major}"></td>
+                                                <br><br>
 
                                                 <td>电话 <input type="text" name="tel" value="{$data.tel}"><br><br></td>
                                                 <!-- <td>密码<input type="text" name="password" value="{$info.password}"><br><br></td> -->
@@ -143,25 +164,74 @@
 
 
                                                 <br><br>
+                                                <div class="modal-footer" style="text-align: center;">
+                                                    <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">取消</button>
+                                                    <input type="hidden" name="id" value="{$data.id}">
 
-                                                <br/> <br/>
-                                                <input type="hidden" name="id" value="{$data.id}">
-                                                <input type="submit" value="确定修改">
+                                                    <button type="submit" class="btn btn-primary">确定</button>
+                                                </div>
+                                                <br /> <br />
+
+                                            </form>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal3" tabindex="-1" role="dialog"
+                            aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">添加选题</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="modal-body" style="text-align: center;">
+                                            <form action="{:url('index/do_add_theme')}" method="post"
+                                                enctype="multipart/form-data" class="form-style">
+
+                                                <!-- <td>工号 <input type="text" name="name" value="{$info.id}"></td><br>
+                                                <td>姓名 <input type="text" name="name" value="{$info.name}"></td><br>
+                                                <td>密码 <input type="text" name="password" value="{$info.password}"></td><br> -->
+                                                <td>主题 <input type="text" name="theme_name" value=""></td><br>
+
+
+
+                                                <!-- <input type="hidden" name="id"  value="{$data.id}">
+                                                <input type="submit" value="添加主题"> -->
+
+                                                <div class="modal-footer" style="text-align: center;">
+                                                    <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">取消</button>
+                                                    <input type="hidden" name="id" value="{$data.id}">
+
+                                                    <button type="submit" class="btn btn-primary">确定</button>
+                                                </div>
+
+
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
                         <ul class="dropdown-menu">
                             <!-- <li><a href="{:url('index/edit_teacher')}?id={$data.id}">修改信息</a></li> -->
 
 
                             <li><a href="#" data-toggle="modal" data-target="#myModal">
-                                修改密码</a>
+                                    修改密码</a>
                             </li>
                             <li><a href="#" data-toggle="modal" data-target="#myModal2">
-                                个人信息</a>
+                                    个人信息</a>
                             </li>
 
                             <!-- <li><a href="{:url('index/updatapw_t')}?id={$data.id}">修改密码</a></li> -->
@@ -172,8 +242,7 @@
                     </li>
 
                     <li>
-                        <a href="{:url('index/logout')}"> <span><i
-                        class="glyphicon glyphicon-off"></i></span> 注销登录</a>
+                        <a href="{:url('index/logout')}"> <span><i class="glyphicon glyphicon-off"></i></span> 注销登录</a>
                     </li>
                 </ul>
             </div>
@@ -229,13 +298,13 @@
                         </div>
 
                         <div>
-                            <table class="table table-hover">
+                            <table class="table table-hover" style="position: absolute;top: 299px;" >
                                 <tr>
                                     <th>选题序号</th>
                                     <th>选题</th>
-                                    <th>已选学生学号</th>
-                                    <th>已选学生姓名</th>
-                                    <th>论文管理</th>
+                                    <th>已选用户编号</th>
+                                    <th>已选用户姓名</th>
+                                    <th>文件管理</th>
                                 </tr>
                                 {volist name="res" id="vo"}
                                 <tr>
@@ -243,7 +312,9 @@
                                     <td>{$vo.theme_name}</td>
                                     <td>{$vo.student_id}</td>
                                     <td>{$vo.name}</td>
-                                    <td><a href="{:url('index/uploadpaper2',['id' => $vo['id']])}"><button>查看论文</button></a></td>
+                                    <td><a
+                                            href="{:url('index/uploadpaper2',['id' => $vo['id']])}"><button>查看文件</button></a>
+                                    </td>
                                 </tr>
                                 {/volist}
                         </div>

@@ -40,22 +40,8 @@ th
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 
 
-    <h1>欢迎使用桂林电子科技大学毕业设计管理系统</h1>
-<!-- <br>教师编号<td>{$data.id}</td><br><td>{$data.name}老师</td> -->
+    <h1>用户管理</h1>
 
-
-
-
-
-<ul class="nav nav-pills">
-	<li role="presentation" ><a href="{:url('index/show_teacher')}?id={$data.id}">基础信息</a></li>
-  <li role="presentation" ><a href="{:url('index/edit_teacher')}?id={$data.id}">修改信息</a></li>
-  <li role="presentation"><a href="{:url('index/add_theme')}?id={$data.id}">添加选题</a></li>
-  <li role="presentation"><a href="{:url('index/ud_th')}?id={$data.id}">选题管理</a></li>
-  <li role="presentation"><a href="{:url('index/updatapw_t')}?id={$data.id}">修改密码</a></li>
-  
-   <li role="presentation"class="active"><a href="{:url('index/show_check')}?id={$data.id}">学生管理</a></li><li role="presentation"><a href="{:url('index/logout')}">注销登录</a></li>
-</ul>
 <form action="{:url('index/do_check')}" method="post" enctype="multipart/form-data" class="form-style">
 
 
@@ -68,7 +54,8 @@ th
 <input type="hidden" name="id"  value="{$info.id}">
 <input type="submit" value="确定修改">
 
-
+<button type="button" class="btn btn-primary" style="text-align: center;"
+        onclick="javascript:window.history.go(-1)">返回
 </form>
 </body>
 </form>

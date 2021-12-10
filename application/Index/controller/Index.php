@@ -197,16 +197,16 @@ public function uploadpaper2(){//上传学生照片
 
 
 
-    public function edit_teacher(){
-    //查询单条用户信息
-        if(request()->isGet()){
-            $id = input('id');
-            $info = Db::name('teacher')
-                    ->where('id',$id)
-                    ->find();
-            return $this->fetch('do_edit_teacher',array('info'=>$info));
-        }
-    }
+    // public function edit_teacher(){
+    // //查询单条用户信息
+    //     if(request()->isGet()){
+    //         $id = input('id');
+    //         $info = Db::name('teacher')
+    //                 ->where('id',$id)
+    //                 ->find();
+    //         return $this->fetch('do_edit_teacher',array('info'=>$info));
+    //     }
+    // }
 
    
 
@@ -556,23 +556,14 @@ public function show_user(){
       
 }
 
-public function updatapw_u(){
-    
-      if(request()->isGet()){
-            $id = input('id');
-            $info = Db::name('user')
-                    ->where('id',$id)
-                    ->find();
-            return $this->fetch('do_updatapw_u',array('info'=>$info));
-        }
-      
-}
+
 
 public function do_updatapw_u(){
 
     if(request()->isPost()){
             
             $data['password'] = input('password');
+            
             //执行修改
             $res = Db::name('user')
                     ->where('id',input('post.id'))
@@ -622,12 +613,7 @@ public function do_updatapw_t(){
         }
 }
 
-
-public function announcement(){
-            return $this->fetch('index/announcement');
-        }
-            
-      
+    
 public function publish_anno(){
             if(request()->isPost()){
             $data['ad'] = input('ad');
@@ -644,16 +630,16 @@ public function publish_anno(){
             
 
 
-//获取选题
-    public function add_theme(){
-             if(request()->isGet()){
-            $id = session('id_1');
-            $info = Db::name('theme')
-                    ->where('teacher_id',$id)
-                    ->find();
-            return $this->fetch('show_theme',array('info'=>$info));
-    }
-}
+// //获取选题
+//     public function add_theme(){
+//              if(request()->isGet()){
+//             $id = session('id_1');
+//             $info = Db::name('theme')
+//                     ->where('teacher_id',$id)
+//                     ->find();
+//             return $this->fetch('show_theme',array('info'=>$info));
+//     }
+// }
  public function ud_th(){
              if(request()->isGet()){
             $id = session('id_1');
@@ -666,7 +652,12 @@ public function publish_anno(){
  
 //添加选题
     public function do_add_theme(){
-        $id = session('id_1');
+        
+        
+        // input('theme_name')
+        // input('id')
+        
+        $id = session::get('id_1');
         $list=Db::name('theme')->where('teacher_id',$id)->select();
             $list_length=count($list);
              // dump($list_length);die;
