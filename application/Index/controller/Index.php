@@ -129,7 +129,7 @@ public function do_edit_user(){
             $info = Db::name('user')
                     ->where('id',$id)
                     ->find();
-            return $this->fetch('index/uploadpaper',array('info'=>$info),['__IMG__'=>'/uploads']);
+            return $this->fetch('index/paper_user',array('info'=>$info),['__IMG__'=>'/uploads']);
         }
     }
 public function uploadpaper2(){//上传学生照片
@@ -138,7 +138,7 @@ public function uploadpaper2(){//上传学生照片
             $info = Db::name('user')
                     ->where('id',$id)
                     ->find();
-            return $this->fetch('index/uploadpaper2',array('info'=>$info),['__IMG__'=>'/uploads']);
+            return $this->fetch('index/paper_state',array('info'=>$info),['__IMG__'=>'/uploads']);
         }
     }
 

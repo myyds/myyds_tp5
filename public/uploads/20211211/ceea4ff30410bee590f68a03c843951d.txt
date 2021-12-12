@@ -1,0 +1,21 @@
+﻿git init（已经有.git文件不需要执行此步骤） - 初始化仓库
+(git clone +url)
+git clone git@github.com:myyds/myyds_tp5.git
+
+从远程仓库，（同步/更新）项目到本地
+git pull
+
+状态   git status
+
+
+提交
+git add .          - 添加文件到暂存区
+git commit -m "这是第一次提交的描述"      -将暂存区内容添加到仓库中
+
+git remote rm origin
+git remote add origin +url //关联远程仓库
+
+git remote add origin git@github.com:myyds/myyds_tp5.git
+git push -u origin master//把本地库的所有内容推送到远程库上
+
+

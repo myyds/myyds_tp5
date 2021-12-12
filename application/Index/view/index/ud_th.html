@@ -10,7 +10,7 @@
 
 </head>
 <style type="text/css">
-table, td
+/* table, td
   {
   border:1px solid green;
   }
@@ -29,9 +29,13 @@ th
 	position: fixed;
 	top: 150px;
 	left: 500px;
+} */
+
+span{
+  position: fixed;
+	top: 23110px;
+	left: -700px;
 }
-
-
 </style>
 <body>
 
@@ -47,48 +51,58 @@ th
 
 
 
-<div class="content">
-  <h1 class="title">选题管理</h1>
-  <div class="add">
-    <ul class="nav nav-pills">
-  <!-- <li role="presentation" ><a href="{:url('index/show_teacher')}?id={$data.id}">基础信息</a></li> -->
-  <!-- <li role="presentation"><a href="{:url('index/edit_teacher')}?id={$data.id}">修改信息</a></li> -->
-  <!-- <li role="presentation"><a href="{:url('index/add_theme')}?id={$data.id}">添加选题</a></li> -->
-  <!-- <li role="presentation"class="active"><a href="{:url('index/ud_th')}?id={$data.id}">选题管理</a></li> -->
-  <!-- <li role="presentation"><a href="{:url('index/updatapw_t')}?id={$data.id}">修改密码</a></li> -->
-  
-   <!-- <li role="presentation"><a href="{:url('index/show_check')}?id={$data.id}">学生管理</a></li><li role="presentation"><a href="{:url('index/logout')}">注销登录</a></li> -->
-</ul>
-<form action="{:url('index/ud_th')}" method="post" enctype="multipart/form-data" class="form-style">
-<table border="1" cellpadding="5" cellspacing="0" style="text-align: center;">
-
-<tr>
-<th>编号</th>
-<th>选题</th>
-
-
-</tr>
-{volist name="info" id="vo"}
-<tr>
-  
-  <td>{$vo.theme_id}</td>
-
-<td>主题 <input type="text" name="theme_name" value="{$vo.theme_name}"></td><br>
-
-</tr>
-
-
-{/volist}
-
-
-
-
-<button type="button" class="btn btn-primary" style="text-align: center;"
-        onclick="javascript:window.history.go(-1)">返回
-</table>
-</form>
+<div class="content" >
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"><h3>选题管理</h3>
+      <form action="{:url('index/ud_th')}" method="post" enctype="multipart/form-data" class="form-style">
+        <!-- <table border="1" cellpadding="5" cellspacing="0" style="text-align: center;"> -->
+          <table class="table table-hover">
+            <tr>
+                <th>选题序号</th>
+                <th>选题</th>
+            </tr>
+            {volist name="info" id="vo"}
+            <tr>
+                <td>{$vo.theme_id}</td>
+                <td>{$vo.theme_name}</td>
+            </tr>
+            {/volist}
+        </table>
+        <tr>
+        
+        
+        
+        <!-- </tr>
+        {volist name="info" id="vo"}
+        <tr>
+          
+          <td>{$vo.theme_id}</td>
+        
+        <td>主题 <input type="text" name="theme_name" value="{$vo.theme_name}"></td><br>
+        
+        </tr> -->
+        
+        
+        <!-- {/volist} -->
+        
+        
+        
+        
+        
+        </table>
+        </form>
+          </div>
+          <br>
+          <span  class="glyphicon glyphicon-chevron-left" style="font-size:30px"
+                onclick="javascript:window.history.go(-1)"></span>
+        </div></div>
+    
+    
   </div>
-</div>
+  
+  
+
 
 
 　　</body>
