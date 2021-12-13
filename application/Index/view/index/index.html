@@ -135,8 +135,8 @@
     
     .box_111 {
         position: relative;
-        top: -100px;
-        right: 100px;
+        top:-175px;
+        right: 77px;
         height: 280px;
         width: 320px;
         border-bottom-right-radius: 100px;
@@ -147,10 +147,26 @@
         top: 50px;
     }
     
-    .bgi {
-        background-image: url('../static/10086.jpg');
-        ;
+    #login{
+        position: fixed;
+    left: 45px;
+    top: 250px;
+    width: 100%;
+    height: 100%;
+    min-width: 970px;
+    min-height: 500px;
+    z-index: 11;
     }
+    .login_bg_layer {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    min-width: 970px;
+    min-height: 500px;
+    z-index: 10;
+}
 </style>
 <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js ">
 </script>
@@ -173,7 +189,9 @@
 
 
 <body>
-    <div style=" background: url(__STATIC__/10086.jpg);">
+    <div class="login_bg_layer">
+    <img src="/webposlogo1_zh.jpg" alt="" style="width: 100%;height: 100%;"></div>
+    <div >
 
         <div class="modal fade" tabindex="-1" role="dialog" id="adduser1">
             <div class="modal-dialog" role="document">
@@ -217,9 +235,9 @@
 
 
 
-        <div class="login_box1 col-md-3 col-md-offset-9">
+        <div class="login_box1 col-md-3 col-md-offset-9" id="login">
             <div id="app">
-                <div class="box_111" style="background-color: #cccccc;">
+                <div class="box_111">
 
 
 
@@ -231,13 +249,7 @@
                             <div class="login_box_input col-md-12 col-xs-12">
                                 <div class="row login_row">
                                     <div class="col-md-10 col-xs-10 col-md-offset-1 col-xs-offset-1">
-                                        <div class="input-group">
-                                            <span class="input-group-addon radius-no" id="mark_UID"><i class="glyphicon glyphicon-user"
-                                    aria-hidden="true"></i></span>
-                                            <!-- <input name="txtUserId" type="text" id="txtUserId" class="form-control radius-no" placeholder="Account" aria-describedby="mark_UID" style="width:100%;" autocomplete="off"> -->
-                                            <input type="text" class="  form-control" id="id" name="id" placeholder="Account" style="background-color:rgba(255, 255, 255, 0.5);" autocomplete="off">
-
-                                        </div>
+                                        
                                     </div>
                                 </div>
 
@@ -245,21 +257,56 @@
                                 <div class="row login_row">
                                     <div class="col-md-10 col-xs-10 col-md-offset-1 col-xs-offset-1">
                                         <div class="input-group">
-                                            <span class="input-group-addon radius-no" id="mark_PWD"><i
-                                    class="glyphicon glyphicon-lock"></i></span>
-                                            <!-- <input name="txtPassword" type="password" id="txtPassword" class="form-control radius-no" placeholder="Password" aria-describedby="mark_PWD"> -->
-                                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" style="background-color:rgba(255, 255, 255, 0.5);"><br />
-
+                                        
                                         </div>
                                     </div>
                                 </div>
                                 <br>
+<!-- -------- -->
 
+<div class="input-group">
+    <span class="input-group-addon radius-no" id="mark_UID"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+    <input name="id" type="text" value="a034s153437" id="id" class="form-control radius-no" placeholder="Account" aria-describedby="mark_UID" style="width:100%;">
+</div>
+<br>
+<div class="input-group">
+    <span class="input-group-addon radius-no" id="mark_PWD"><i class="glyphicon glyphicon-lock"></i></span>
+    <input name="password" type="password" id="password" class="form-control radius-no" placeholder="Password" aria-describedby="mark_PWD">
+</div>
+<br>
+
+<div class="input-group">
+    <span class="input-group-addon radius-no" id="mark_DOMAIN"><i class="glyphicon glyphicon-globe"></i></span>
+    <select name="LanguageSelect" onchange="javascript:setTimeout('__doPostBack(\'LanguageSelect\',\'\')', 0)" id="LanguageSelect" tabindex="4" class="form-control" aria-describedby="mark_DOMAIN" style="width:100%;">
+<option value="English">English</option>
+<option selected="selected" value="中文">中文</option>
+
+</select>
+</div>
+<br>
+<div class="input-group">
+    <span class="input-group-addon radius-no" id="mark_VERIFY"><i class="glyphicon glyphicon-heart-empty"></i></span>
+    
+    <input name="txtCaptcha" type="text" id="txtCaptcha" autocomplete="off" class="form-control radius-no" style="height: 31px; width: 40%" placeholder="请输入验证码" maxlength="4" aria-describedby="mark_VERIFY">
+    
+    <img id="Captcha" style="width: 59%; height: 31px;" alt="更换验证码" src='Captcha.php' title="看不清，点击换一张" align="absmiddle">
+</div>
+<br>
+
+<div >
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group" style="width: 200px;">
+            <input name="Hid_MacValue" type="hidden" id="Hid_MacValue">
+            <input type="submit" name="Btn_Login" value="登 录" onclick="return checkForm();" id="Btn_Login" tabindex="6" class="btn btn-primary btn-lg">
+        </div>
+    </div>
+</div>
+<!-- -------- -->
 
                                 <div class="row login_row1">
                                     <div class="col-md-10 col-xs-10 col-md-offset-1 col-xs-offset-1">
                                         <div class="input-group1">
-                                            <button type="submit" class="btn btn-primary btn-block">登录</button>
+                                            <!-- <button type="submit" class="btn btn-primary btn-block">登录</button> -->
 
 
 
@@ -281,7 +328,7 @@
 
 
 
-                </div><button @click="isUser= !isUser"> 转换</button>
+                <!-- </div><button @click="isUser= !isUser"> 转换</button> -->
             </div>
         </div>
 
