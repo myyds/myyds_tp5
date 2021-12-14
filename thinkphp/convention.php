@@ -295,8 +295,4 @@ return [
         'user'    => null,
     ],
 
-    //自定义配置
-    "name" =>"woaini",
-    "age"=>999
-
 ];

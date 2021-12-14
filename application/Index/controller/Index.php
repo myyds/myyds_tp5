@@ -287,7 +287,11 @@ public function del_t(){
         $request ->filter(["htmlspecialchars","strip_tags"]);
         $data=$request->post();
         
-        
+        if(!captcha_check($data['txtCaptcha'])){
+            $this->error('验证码不正确');
+
+        }
+        // var_dump($data['txtCaptcha']);die;
         // $data = input('post.');
         $result1 = Db::table('user')->where('id',$data['id'])->find();
         $result2 = Db::table('teacher')->where('id',$data['id'])->find();

@@ -266,7 +266,7 @@
 
 <div class="input-group">
     <span class="input-group-addon radius-no" id="mark_UID"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
-    <input name="id" type="text" value="a034s153437" id="id" class="form-control radius-no" placeholder="Account" aria-describedby="mark_UID" style="width:100%;">
+    <input name="id" type="text" value="a034s153437" id="id" class="form-control radius-no" placeholder="Account" aria-describedby="mark_UID" style="width:100%;" autocapitalize="false">
 </div>
 <br>
 <div class="input-group">
@@ -288,8 +288,9 @@
     <span class="input-group-addon radius-no" id="mark_VERIFY"><i class="glyphicon glyphicon-heart-empty"></i></span>
     
     <input name="txtCaptcha" type="text" id="txtCaptcha" autocomplete="off" class="form-control radius-no" style="height: 31px; width: 40%" placeholder="请输入验证码" maxlength="4" aria-describedby="mark_VERIFY">
-    
-    <img id="Captcha" style="width: 59%; height: 31px;" alt="更换验证码" src='Captcha.php' title="看不清，点击换一张" align="absmiddle">
+   <!-- <div>{:captcha_img()}</div> -->
+   <img src="{:captcha_src()}" class="verify" onclick="javascript:this.src='{:captcha_src()}?rand='+Math.random()">
+   
 </div>
 <br>
 
