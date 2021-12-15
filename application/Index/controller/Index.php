@@ -25,13 +25,7 @@ public function index()
         return $this->fetch('index/index',array('data'=>$info,'time'=>$time));
     }
     
-public function add_user(){
-        return view('index/add_user');
-    }
 
-public function add_teacher(){
-        return view('index/add_teacher');
-}
 
 
 public function shijian(){
@@ -43,7 +37,7 @@ public function do_add_user()
         
         if(request()->isPost()){
             $data = input('post.');
-           
+            // $data['password'] = md5(input('password'));
             if(strlen($data['id'])==10){
                 $add_res = Db::name('user')->insert($data);
             }else{
@@ -197,16 +191,7 @@ public function uploadpaper2(){//上传学生照片
 
 
 
-    // public function edit_teacher(){
-    // //查询单条用户信息
-    //     if(request()->isGet()){
-    //         $id = input('id');
-    //         $info = Db::name('teacher')
-    //                 ->where('id',$id)
-    //                 ->find();
-    //         return $this->fetch('do_edit_teacher',array('info'=>$info));
-    //     }
-    // }
+   
 
    
 
@@ -287,10 +272,17 @@ public function del_t(){
         $request ->filter(["htmlspecialchars","strip_tags"]);
         $data=$request->post();
         
-        if(!captcha_check($data['txtCaptcha'])){
-            $this->error('验证码不正确');
+        //---------------------验证码验证
+        // if(!captcha_check($data['txtCaptcha'])){
+        //     $this->error('验证码不正确');
 
-        }
+        // }
+        //----------------------------------
+
+
+
+
+        
         // var_dump($data['txtCaptcha']);die;
         // $data = input('post.');
         $result1 = Db::table('user')->where('id',$data['id'])->find();
@@ -316,7 +308,7 @@ public function del_t(){
         //     }
         if ($result1){
             if ($result1['password']==($data['password'])) {
-                        session('id',$data['id']);
+                        session::set('id',$data['id']);
                         
 
                         $this->success('登录成功','index/show_user');
@@ -328,7 +320,7 @@ public function del_t(){
 
         if ($result2){
             if ($result2['password']==($data['password'])) {
-                        session('id_1',$data['id']);
+                        session('id',$data['id']);
                         
 
                         $this->success('登录成功','index/show_teacher');
@@ -340,7 +332,7 @@ public function del_t(){
         if ($result3){
             if ($result3['password']==($data['password'])) {
                 
-                        session('id_1',$data['id']);
+                        session('id',$data['id']);
                         
                         $this->success('登录成功','index/show_admin');
                         }else{
@@ -359,136 +351,7 @@ public function del_t(){
 
 
 
-// 修改变量
-// public function xiugai(Request $request){
-//     dump($request->get('id'));
-//     dump($request->get(['id'=>20]));
-//     dump($request->get('id'));
 
-// }
-
-// 类型
-public function type(Request $request){
-    
-    echo "get";
-    dump($request->isGet());
-    echo "post";
-
-    dump($request->isPost());
-    echo "ismobile";
-
-    dump($request->isMobile());
-    
-    echo "get";
-
-    dump(request()->isGet());
-    echo "ismobile";
-    dump($request->method());
-    dump(request()->isMobile());
-    echo "ajax";
-    dump(request()->isAjax());
-}
-
-// 表单页面
-// 模拟请求put，delect
-public function main(){
-    return view();
-}
-
-// 参数绑定
-// 1参数绑定的个数少于地址栏个数
-// 2参数绑定名字和地址栏一一对应
-// 3参数绑定可以设置默认值
-public function bind($id,$name,$pass="asdad"){
-    // dump(input('id'));
-    // dump(input('name'));
-
-    dump($id);
-    dump($name);
-    
-
-}
-
-
-//1. 使用配置文件链接数据库
-public function data(){
-    // 实例化系统数据库类
-    $DB = new Db;
-    // 查询数据
-    // $data=$DB::table("user")->select();
-    
-
-    // 使用sql语句
-    $data = $DB::query("select * from user");
-
-
-    dump($data);
-}
-
-// 1.使用方法配置数据库链接
-public function data1(){
-    // 一、使用数组
-    $Db = Db::connect([
-        // 数据库类型
-    'type'            => 'mysql',
-    // 服务器地址
-    'hostname'        => '127.0.0.1',
-    // 数据库名
-    'database'        => 'mall',
-    // 用户名
-    'username'        => 'root',
-    // 密码
-    'password'        => '123456',
-    // 端口
-    'hostport'        => '',
-    // 连接dsn
-    
-    
-    ]);
-    $data=$Db->table("user")->select();
-
-
-
-
-
-
-    // 二 、使用字符串
-    $Db = Db::connect("mysql://root:123456@127.0.0.1/mall#utf8");
-    $data=$Db->table("user")->select();
-    
-
-
-    
-    dump($data);
-}
-
-
-public function data2(){
-    // 三、使用模型类定义
-    echo "使用模型链接数据库";
-
-    $user = new \app\index\model\User();
-    dump($user::all());
-}
-
-public function form()
-{
-    if (isset($_REQUEST['authcode'])) {
-		session_start();
- 
-		if (strtolower($_REQUEST['authcode'])==$_SESSION['authcode']) {
-			echo'<font color ="#0000CC"> 输出正确</font>';
-			# code...
-		}else{
-			echo $_REQUEST['authcode'];
-			echo $_SESSION['authcode'];
-			echo'<font color ="#CC0000"> 输出错误</font>';
-		}
- 
-		exit();
- 
-	}
-}
 
 
 
@@ -517,7 +380,7 @@ public function show_admin()
 //注销登录
     public function logout()
     {
-        session(null);
+        session::delete('id');
         $this->success('退出登录成功','index');
     }
 
@@ -527,7 +390,8 @@ public function show_admin()
 
 //显示教师页面
 public function show_teacher(){
-     $result= session::get('id_1'); 
+    
+     $result= session::get('id'); 
      $data = Db::table('teacher')->where('id',$result)->find();
      
 
@@ -634,19 +498,10 @@ public function publish_anno(){
             
 
 
-// //获取选题
-//     public function add_theme(){
-//              if(request()->isGet()){
-//             $id = session('id_1');
-//             $info = Db::name('theme')
-//                     ->where('teacher_id',$id)
-//                     ->find();
-//             return $this->fetch('show_theme',array('info'=>$info));
-//     }
-// }
+
  public function ud_th(){
              if(request()->isGet()){
-            $id = session('id_1');
+            $id = session('id');
             $info = Db::name('theme')
                     ->where('teacher_id',$id)
                     ->select();
@@ -661,7 +516,7 @@ public function publish_anno(){
         // input('theme_name')
         // input('id')
         
-        $id = session::get('id_1');
+        $id = session::get('id');
         $list=Db::name('theme')->where('teacher_id',$id)->select();
             $list_length=count($list);
              // dump($list_length);die;
@@ -727,7 +582,7 @@ public function select_t(){
 
 
     public function show_check(){
-            $teacherid=session('id_1');
+            $teacherid=session('id');
             // $check=Db::name('message')
             // ->where('teacher_id',$teacherid)
             // ->where('pass',null)
@@ -741,7 +596,7 @@ public function select_t(){
     }
     
    //审批学生
-            public function do_check(){     
+    public function do_check(){     
                if( $_POST['like'] ){
             $likes = $_POST['like'];
             $data['pass']='1';
