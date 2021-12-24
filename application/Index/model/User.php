@@ -5,10 +5,7 @@ use think\Model;
 
 class User extends Model{
     // 使用数组配置链接数据库
-
-    // protected $connection=[
-       
-        
+    // protected $connection=[ 
     //     'type'            => 'mysql',
     //     // 服务器地址
     //     'hostname'        => '127.0.0.1',
@@ -20,11 +17,13 @@ class User extends Model{
     //     'password'        => '123456',
     //     // 端口
     //     'hostport'        => '',
-    //     // 连接dsn
-          
+    //     // 连接dsn  
     // ];
+
+
 
    //使用字符串
     protected $connection= "mysql://root:123456@127.0.0.1/mall#utf8";
+   
 
 }

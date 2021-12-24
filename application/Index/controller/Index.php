@@ -2,6 +2,7 @@
 namespace app\index\controller;
 use think\Controller;
 use think\Model;
+use think\View;
 use think\Db;
 use think\Request;
 use think\Session;
@@ -10,34 +11,30 @@ use think\Session;
 header("Content-type:text/html;charset=UTF-8");
 class Index extends Controller
 {
-   
+
+// public function _initialize(){
+//     // $havesession = session('?id');
+//     // $this->assign('havesession',$havesession);
+
+//     // return $this->fetch('index/show_user');
+//     if(!session('id')){
+//         return $this->fetch('index/index');
+//     }
+// }
 
 public function index()
-    {       
+    {
+        return $this->fetch('index/index');     
        
-        // $time['y']=date("Y-m-d",strtotime("now")); 
-        // $time['r']=date('Y-m-d H:i:s',time());;
-        $info = Db::name('admin')
-                    ->where('id','1')
-                    ->find();
-        // $this->assign('data'=>$info,'time'=>$time);
-        // return $this->fetch('index/index');
-        return $this->fetch('index/index',array('data'=>$info,'time'=>$time));
     }
-    
 
-
-
-public function shijian(){
-    echo input('year').''.input('month');
-}
 //添加用户信息
 public function do_add_user() 
     {
         
         if(request()->isPost()){
             $data = input('post.');
-            // $data['password'] = md5(input('password'));
+            // $data['password'] = md5(input('password'));//密码加密
             if(strlen($data['id'])==10){
                 $add_res = Db::name('user')->insert($data);
             }else{
@@ -188,14 +185,6 @@ public function uploadpaper2(){//上传学生照片
         }
 
 
-
-
-
-   
-
-   
-
-
 public function do_edit_teacher(){
     //修改用户信息
         if(request()->isPost()){
@@ -272,40 +261,18 @@ public function del_t(){
         $request ->filter(["htmlspecialchars","strip_tags"]);
         $data=$request->post();
         
-        //---------------------验证码验证
+        //-----------验证码验证功能开启------
         // if(!captcha_check($data['txtCaptcha'])){
         //     $this->error('验证码不正确');
-
         // }
         //----------------------------------
 
-
-
-
-        
-        // var_dump($data['txtCaptcha']);die;
-        // $data = input('post.');
+    
         $result1 = Db::table('user')->where('id',$data['id'])->find();
         $result2 = Db::table('teacher')->where('id',$data['id'])->find();
         $result3 = Db::table('admin')->where('id',$data['id'])->find();
         
-        // if ($result1||$result2||$result3) {
-        //     if ($result1['password']==($data['password'])) {
-        //         session('id',$data['id']);
-        //         $this->success('登录成功','index/show_user');
-        //         }
-        //         elseif($result2['password']==($data['password'])){
-        //         session('id_1',$data['id']);
-        //         $this->success('登录成功','index/show_teacher');
-        //         }
-        //         elseif($result3['password']==($data['password'])){
-        //         session('id_1',$data['id']);
-        //         $this->success('登录成功','index/show_admin');
-        //         }
-        //         else{
-        //             $this->error('密码错误');
-        //             }
-        //     }
+        
         if ($result1){
             if ($result1['password']==($data['password'])) {
                         session::set('id',$data['id']);
@@ -316,7 +283,6 @@ public function del_t(){
                                         $this->error('密码错误');
                                         }
         }
-
 
         if ($result2){
             if ($result2['password']==($data['password'])) {
@@ -349,14 +315,9 @@ public function del_t(){
 }
         
 
-
-
-
-
-
-
 public function show_admin()
     {   
+        
         // $result = Db::name('user')->order('id desc')->paginate(10);
         $result = Db::name('user')->order('id')->paginate(10);
         $page = $result->render();
@@ -373,19 +334,8 @@ public function show_admin()
         $this->assign('data_list3',$result3);
         $this->assign('page3',$page3);
         
-        
-
         return $this->fetch('index/show_admin');
     }
-//注销登录
-    public function logout()
-    {
-        session::delete('id');
-        $this->success('退出登录成功','index');
-    }
-
-
-
 
 
 //显示教师页面
@@ -394,7 +344,6 @@ public function show_teacher(){
      $result= session::get('id'); 
      $data = Db::table('teacher')->where('id',$result)->find();
      
-
      $data2 = Db::table('theme')->where('teacher_id',$result)->select();
      $res=Db::table('user')
         ->join('theme','theme.student_id= user.id')
@@ -408,7 +357,6 @@ public function show_teacher(){
 //显示学生页面
 public function show_user(){
 
-
      $result = session::get('id'); 
      $data = Db::table('user')->where('id',$result)->find();
      
@@ -421,10 +369,11 @@ public function show_user(){
      $this->assign('teacher',$teacher);
      return $this->fetch('index/show_user');
      
-      
 }
-
-
+//空操作
+public function _empty(){
+    return $this->redirect('index/index');
+}
 
 public function do_updatapw_u(){
 
@@ -439,25 +388,11 @@ public function do_updatapw_u(){
             if($res){
                 $this->success('更新成功','index/show_user');
             }else{
-                $this->error('无更新内容!','index/show_user');
+                $this->error('无更新内容!');
             }
         }
 }
 
-
-
-
-// public function updatapw_t(){
-    
-//       if(request()->isGet()){
-//             $id = input('id');
-//             $info = Db::name('teacher')
-//                     ->where('id',$id)
-//                     ->find();
-//             return $this->fetch('do_updatapw_t',array('info'=>$info));
-//         }
-      
-// }
 
 public function do_updatapw_t(){
     $get = $this->request->get();
@@ -476,11 +411,10 @@ public function do_updatapw_t(){
             if($res){
                 $this->success('更新成功','index/show_teacher');
             }else{
-                $this->error('无更新内容','index/show_teacher');
+                $this->error('无更新内容');
             }
         }
 }
-
     
 public function publish_anno(){
             if(request()->isPost()){
@@ -491,14 +425,11 @@ public function publish_anno(){
             if($res){
                 $this->success('更新成功','index/show_admin');
             }else{
-                $this->error('无更新内容','index/show_admin');
+                $this->error('无更新内容');
             }
         }
         }
             
-
-
-
  public function ud_th(){
              if(request()->isGet()){
             $id = session('id');
@@ -512,10 +443,6 @@ public function publish_anno(){
 //添加选题
     public function do_add_theme(){
         
-        
-        // input('theme_name')
-        // input('id')
-        
         $id = session::get('id');
         $list=Db::name('theme')->where('teacher_id',$id)->select();
             $list_length=count($list);
@@ -528,14 +455,11 @@ public function publish_anno(){
                     ->where('teacher_id',$id)
                     ->insert($data);
                 $this->success('更新成功','index/show_teacher');}
-                else{$this->error('选题已达到上限','index/show_teacher');}
+                else{$this->error('选题已达到上限');}
             }else{
-                $this->error('添加失败','index/show_teacher');
+                $this->error('添加失败');
             }
         }
-
-
-
 
 
 public function select_t(){
@@ -566,8 +490,6 @@ public function select_t(){
             $teacher_id= Db::name('theme')
                     ->where('theme_id',$theme_id)
                     ->find();
-
-
             $data['teacher_id']=$teacher_id['teacher_id'];//教师id
             $data['theme_id']=$theme_id;
             $res = Db::name('message')
@@ -583,10 +505,6 @@ public function select_t(){
 
     public function show_check(){
             $teacherid=session('id');
-            // $check=Db::name('message')
-            // ->where('teacher_id',$teacherid)
-            // ->where('pass',null)
-            // ->select();
             $check=Db::name('user')
                 ->join('message','user.id = message.student_id')
                 ->where('message.pass',null)->where('message.teacher_id',$teacherid)->select();
@@ -621,7 +539,11 @@ public function select_t(){
 
 }
 
-
-
+//注销登录
+    public function logout()
+    {
+        session::delete('id');
+        $this->success('退出登录成功','index');
+    }
 
     }

@@ -19,7 +19,7 @@ use think\Route;
 // Route::rule('time/:year/:month','index/index/shijian');
 
 // 资源路由
-// Route::resource('user','index/users');
+// Route::resource('index','index/index');
 
 
 return [
