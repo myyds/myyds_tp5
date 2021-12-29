@@ -17,7 +17,7 @@
 
 
 	<div class="content">
-		<h1 class="title">	欢迎使用桂林电子科技大学北海校区毕业设计管理系统</h1>
+		
 		<div class="add">
 	<!-- 			<ul class="nav nav-pills">
   <li role="presentation" ><a href="{:url('index/show_user')}">选题信息</a></li>
@@ -44,7 +44,7 @@
 
 	
 		</td>
-{if $info.paper == null}未提交论文{else}已提交论文{/if}
+{if $info.paper == null}<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>{else}<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>{/if}
 <br>
 
 
@@ -77,7 +77,7 @@
 
 	
 		</td>
-{if $info.paper3 == null}未提交论文{else}已提交论文{/if}
+{if $info.paper3 == null}<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>{else}<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>{/if}
 <br>
 
 
