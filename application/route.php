@@ -25,7 +25,7 @@ Route::rule('/','index/index/index');
 // Route::rule('/$','index/index/index');
 
 // 资源路由
-// Route::resource('user','index/users');
+// Route::resource('index','index/index');
 
 
 return [
