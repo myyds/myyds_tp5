@@ -11,12 +11,18 @@
 
 use think\Route;
 //静态路由
+Route::rule('/','index/index/index');
 // Route::rule('/','index/index/index');
 // Route::rule('test','test/test/test');
 
 // // //带参数路由
-// Route::rule('course/:id','test/test/course');
+
 // Route::rule('time/:year/:month','index/index/shijian');
+// Route::rule('time/:year/[:month]','index/index/shijian');//可选
+
+
+//完全匹配路由
+// Route::rule('/$','index/index/index');
 
 // 资源路由
 // Route::resource('user','index/users');

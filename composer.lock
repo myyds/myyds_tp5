@@ -5,8 +5,7 @@
         "This file is @generated automatically"
     ],
     "content-hash": "10908f8bb33b817d90765bcba184aa93",
-    "packages": [
-        {
+    "packages": [{
             "name": "topthink/framework",
             "version": "v5.0.24",
             "source": {
@@ -42,12 +41,10 @@
             "license": [
                 "Apache-2.0"
             ],
-            "authors": [
-                {
-                    "name": "liu21st",
-                    "email": "liu21st@gmail.com"
-                }
-            ],
+            "authors": [{
+                "name": "liu21st",
+                "email": "liu21st@gmail.com"
+            }],
             "description": "the new thinkphp framework",
             "homepage": "http://thinkphp.cn/",
             "keywords": [
@@ -92,12 +89,10 @@
             "license": [
                 "Apache-2.0"
             ],
-            "authors": [
-                {
-                    "name": "yunwuxin",
-                    "email": "448901948@qq.com"
-                }
-            ],
+            "authors": [{
+                "name": "yunwuxin",
+                "email": "448901948@qq.com"
+            }],
             "description": "captcha package for thinkphp5",
             "support": {
                 "issues": "https://github.com/top-think/think-captcha/issues",
@@ -138,12 +133,10 @@
             "license": [
                 "Apache-2.0"
             ],
-            "authors": [
-                {
-                    "name": "yunwuxin",
-                    "email": "448901948@qq.com"
-                }
-            ],
+            "authors": [{
+                "name": "yunwuxin",
+                "email": "448901948@qq.com"
+            }],
             "support": {
                 "issues": "https://github.com/top-think/think-installer/issues",
                 "source": "https://github.com/top-think/think-installer/tree/v1.0.14"

@@ -621,7 +621,9 @@ public function select_t(){
 
 }
 
-
+public function _empty(){
+    $this->redirect('index/index');
+}
 
 
     }

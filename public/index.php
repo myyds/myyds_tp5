@@ -15,7 +15,7 @@
 define('APP_PATH', __DIR__ . '/../application/');
 
 // 绑定模块 绑定后url中可省略模块
-// define("BIND_MODULE",'index');
+define('BIND_MODULE','index');
 
 
 // 加载框架引导文件
