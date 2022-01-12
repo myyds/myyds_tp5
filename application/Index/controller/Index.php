@@ -539,18 +539,13 @@ public function select_t(){
 
 }
 
-<<<<<<< HEAD
-public function _empty(){
-    $this->redirect('index/index');
-}
 
-=======
 //注销登录
     public function logout()
     {
         session::delete('id');
         $this->success('退出登录成功','index');
     }
->>>>>>> f69aadd70bbf219ac553cc3a64cf46522b767e96
+
 
     }
