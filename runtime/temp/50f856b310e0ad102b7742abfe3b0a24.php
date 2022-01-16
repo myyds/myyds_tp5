@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\index\show_user.html";i:1639197297;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -53,21 +54,21 @@
 
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
-                    <!-- <li><a href="{:url('index/edit_teacher')}?id={$data.id}">修改信息</a></li> -->
-                    <li><a href="{:url('index/select_t')}?id={$data.id}">选择导师</a></li>
-                    <li><a href="{:url('index/uploadpaper')}?id={$data.id}">论文管理{$havesession}</a></li>
+                    <!-- <li><a href="<?php echo url('index/edit_teacher'); ?>?id=<?php echo $data['id']; ?>">修改信息</a></li> -->
+                    <li><a href="<?php echo url('index/select_t'); ?>?id=<?php echo $data['id']; ?>">选择导师</a></li>
+                    <li><a href="<?php echo url('index/uploadpaper'); ?>?id=<?php echo $data['id']; ?>">论文管理</a></li>
 
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><strong>学号</strong> {$data.id} <strong> 姓名</strong> {$data.name} </a></li>
+                    <li><a href="#"><strong>学号</strong> <?php echo $data['id']; ?> <strong> 姓名</strong> <?php echo $data['name']; ?> </a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                             aria-expanded="false">个人信息 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <!-- <li id="usi"><a href="{:url('index/edit_user')}?id={$data.id}">修改信息</a></li> -->
+                            <!-- <li id="usi"><a href="<?php echo url('index/edit_user'); ?>?id=<?php echo $data['id']; ?>">修改信息</a></li> -->
                             <li id="usi"><a href="#">修改信息</a></li>
-                            <!-- <li><a href="{:url('index/updatapw_u')}?id={$data.id}">修改密码</a></li> -->
+                            <!-- <li><a href="<?php echo url('index/updatapw_u'); ?>?id=<?php echo $data['id']; ?>">修改密码</a></li> -->
                             <li id="usp"><a href="#">修改密码</a></li>
 
                             <li><a href="#">Something else here</a></li>
@@ -75,7 +76,7 @@
                             <li><a href="#">Separated link</a></li>
                         </ul>
                     </li>
-                    <li><a href="{:url('index/logout')}">注销登录</a></li>
+                    <li><a href="<?php echo url('index/logout'); ?>">注销登录</a></li>
 
                 </ul>
             </div>
@@ -84,9 +85,9 @@
 
     </nav>
     <div class="container">
-        &nbsp;&nbsp;课题:{$teacher.theme_name}
-        &nbsp;&nbsp;已选教师编号:{$teacher.teacher_id}
-        &nbsp;&nbsp; 已选教师姓名:{$teacher.name}
+        &nbsp;&nbsp;课题:<?php echo $teacher['theme_name']; ?>
+        &nbsp;&nbsp;已选教师编号:<?php echo $teacher['teacher_id']; ?>
+        &nbsp;&nbsp; 已选教师姓名:<?php echo $teacher['name']; ?>
         <div>
             <div class="modal fade" tabindex="-1" role="dialog" id="updatastudentinformation">
                 <div class="modal-dialog" role="document">
@@ -97,47 +98,47 @@
                             <h4 class="modal-title">修改信息</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="{:url('index/do_edit_user')}" method="post" enctype="multipart/form-data"
+                            <form action="<?php echo url('index/do_edit_user'); ?>" method="post" enctype="multipart/form-data"
                                 class="form-style">
 
-                                <td>姓名 <input type="text" name="name" value="{$data.name}"></td><br><br>
-                                <td>性别:{if condition="$data.sex eq '1'"}
+                                <td>姓名 <input type="text" name="name" value="<?php echo $data['name']; ?>"></td><br><br>
+                                <td>性别:<?php if($data['sex'] == '1'): ?>
                                     男<input type="radio" name="sex" value="1" checked="checked">
                                     女<input type="radio" name="sex" value="2">
-                                    {elseif condition="$data.sex eq '2'"}
+                                    <?php elseif($data['sex'] == '2'): ?>
                                     男<input type="radio" name="sex" value="1">
                                     女<input type="radio" name="sex" value="2" checked="checked">
-                                    {/if}</td>
+                                    <?php endif; ?></td>
                                 <td><br><br>
-                                    年龄 <input type="text" name="age" value="{$data.age}"></td><br><br>
+                                    年龄 <input type="text" name="age" value="<?php echo $data['age']; ?>"></td><br><br>
                                 <td>
-                                    电话 <input type="text" name="tel" value="{$data.tel}"><br><br>
+                                    电话 <input type="text" name="tel" value="<?php echo $data['tel']; ?>"><br><br>
                                 </td>
 
 
-                                邮箱<input type="text" name="email" value="{$data.email}"><br><br>
+                                邮箱<input type="text" name="email" value="<?php echo $data['email']; ?>"><br><br>
                                 </td>
-                                家庭住址<input type="text" name="family_adress" value="{$data.family_adress}"><br><br>
-                                </td>
-
-                                身份证号码<input type="text" name="id_" value="{$data.id_}"><br><br>
+                                家庭住址<input type="text" name="family_adress" value="<?php echo $data['family_adress']; ?>"><br><br>
                                 </td>
 
-                                专业<input type="text" name="major" value="{$data.major}"><br><br>
+                                身份证号码<input type="text" name="id_" value="<?php echo $data['id_']; ?>"><br><br>
+                                </td>
+
+                                专业<input type="text" name="major" value="<?php echo $data['major']; ?>"><br><br>
                                 </td>
                                 <!-- 
                                 <select name="teacher_id">
                                                <option value="">请选择</option>
-                                                                     {volist name="info1" id="vo"}
-                                                  <option value="{$vo.id}">{$vo.name}</option>
-                                                                                    {/volist}
+                                                                     <?php if(is_array($info1) || $info1 instanceof \think\Collection || $info1 instanceof \think\Paginator): $i = 0; $__LIST__ = $info1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                                  <option value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></option>
+                                                                                    <?php endforeach; endif; else: echo "" ;endif; ?>
                                                   </select> -->
 
 
 
                                 <!-- <td>
-                                密码<input type="text" name="password" value="{$info.password}"><br><br>
-                                <input type="hidden" value="{$info['id']}" name="id">
+                                密码<input type="text" name="password" value="<?php echo $info['password']; ?>"><br><br>
+                                <input type="hidden" value="<?php echo $info['id']; ?>" name="id">
                                 </td> -->
 
 
@@ -145,16 +146,16 @@
 
 
                                 <td>头像
-                                    <img src="__IMG__/{$data.img}" width="100px;" height="100px;"><!-- 显示img -->
-                                    <input type="hidden" name="old_img" value="{$data.img}"><!-- 输入img -->
-                                    <!-- <a href="__IMG__/{$info.img}" download="{$info.id}.jpg">下载头像</a> -->
+                                    <img src="__IMG__/<?php echo $data['img']; ?>" width="100px;" height="100px;"><!-- 显示img -->
+                                    <input type="hidden" name="old_img" value="<?php echo $data['img']; ?>"><!-- 输入img -->
+                                    <!-- <a href="__IMG__/<?php echo $info['img']; ?>" download="<?php echo $info['id']; ?>.jpg">下载头像</a> -->
                                     <input type="file" name="img">
                                 </td>
 
 
                                 <!-- <td>文件上传
-                                  <input type="hidden" name="old_paper" value="{$info.paper}">
-                                  <a href="__IMG__/{$info.paper}" download="{$info.id}.docx">下载</a>
+                                  <input type="hidden" name="old_paper" value="<?php echo $info['paper']; ?>">
+                                  <a href="__IMG__/<?php echo $info['paper']; ?>" download="<?php echo $info['id']; ?>.docx">下载</a>
                                   <input type="file" name="paper">
                                 </td> -->
 
@@ -163,7 +164,7 @@
 
                         </div>
                         <div class="modal-footer">
-                            <input type="hidden" name="id" value="{$data.id}">
+                            <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
 
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Save changes</button>
@@ -184,13 +185,13 @@
                             <h4 class="modal-title">修改密码</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="{:url('index/do_updatapw_u')}" method="post" enctype="multipart/form-data"
+                            <form action="<?php echo url('index/do_updatapw_u'); ?>" method="post" enctype="multipart/form-data"
                                 class="form-style">
-                                密码<input type="text" name="password" value="{$data.password}"><br><br>
-                                <input type="hidden" value="{$data['id']}" name="id">
+                                密码<input type="text" name="password" value="<?php echo $data['password']; ?>"><br><br>
+                                <input type="hidden" value="<?php echo $data['id']; ?>" name="id">
                                 </td>
 
-                                <input type="hidden" name="id" value="{$data.id}">
+                                <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
 
 
                                 <div class="modal-footer">
@@ -240,9 +241,9 @@
 
     <!-- 
 
-        <li role="presentation"><a href="{:url('index/uploadpaper')}?id={$data.id}">论文管理</a></li>
+        <li role="presentation"><a href="<?php echo url('index/uploadpaper'); ?>?id=<?php echo $data['id']; ?>">论文管理</a></li>
 
-        <li role="presentation"><a href="{:url('index/select_t')}?id={$data.id}">选择导师</a></li> -->
+        <li role="presentation"><a href="<?php echo url('index/select_t'); ?>?id=<?php echo $data['id']; ?>">选择导师</a></li> -->
 
     </ul>
 
@@ -251,9 +252,9 @@
     </div>
 
 
-    <!-- 已选课题:{$teacher.theme_name}<br>
-已选教师编号:{$teacher.teacher_id}<br>
-已选教师姓名:{$teacher.name}<br> -->
+    <!-- 已选课题:<?php echo $teacher['theme_name']; ?><br>
+已选教师编号:<?php echo $teacher['teacher_id']; ?><br>
+已选教师姓名:<?php echo $teacher['name']; ?><br> -->
 
 
     <!-- <table border="1" cellpadding="10" cellspacing="0">
@@ -270,27 +271,27 @@
 <td>主题7</td>
 <td>主题8</td>
 </tr>
-{volist name="data_list" id="vo"}
+<?php if(is_array($data_list) || $data_list instanceof \think\Collection || $data_list instanceof \think\Paginator): $i = 0; $__LIST__ = $data_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 <tr>
-<td>{$vo.id}</td>
-<td>{$vo.name}</td>
-<td>{$vo.major}</td>
-<td>{$vo.theme}</td>
-<td>{$vo.theme2}</td>
-<td>{$vo.theme3}</td>
-<td>{$vo.theme4}</td>
-<td>{$vo.theme5}</td>
-<td>{$vo.theme6}</td>
-<td>{$vo.theme7}</td>
-<td>{$vo.theme8}</td>
+<td><?php echo $vo['id']; ?></td>
+<td><?php echo $vo['name']; ?></td>
+<td><?php echo $vo['major']; ?></td>
+<td><?php echo $vo['theme']; ?></td>
+<td><?php echo $vo['theme2']; ?></td>
+<td><?php echo $vo['theme3']; ?></td>
+<td><?php echo $vo['theme4']; ?></td>
+<td><?php echo $vo['theme5']; ?></td>
+<td><?php echo $vo['theme6']; ?></td>
+<td><?php echo $vo['theme7']; ?></td>
+<td><?php echo $vo['theme8']; ?></td>
 
-<td><a href="{:url('index/edit_user',['id' => $vo['id']])}">编辑</a> | <a href="{:url('index/del',['id' => $vo['id']])}">删除</a></td>
+<td><a href="<?php echo url('index/edit_user',['id' => $vo['id']]); ?>">编辑</a> | <a href="<?php echo url('index/del',['id' => $vo['id']]); ?>">删除</a></td>
 </tr>
-{/volist}
+<?php endforeach; endif; else: echo "" ;endif; ?>
 
 
 
-<div>{$page}</div>
+<div><?php echo $page; ?></div>
 
 
 

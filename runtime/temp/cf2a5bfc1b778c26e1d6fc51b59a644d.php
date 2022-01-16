@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html";i:1642242894;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -72,7 +73,7 @@
                     <h4 class="modal-title">新增学生信息</h4>
                 </div>
                 <div class="modal-body" style="text-align: center;">
-                    <form action="{:url('index/do_add_user')}" method="post" class="form-style">
+                    <form action="<?php echo url('admin/do_add_user'); ?>" method="post" class="form-style">
                         学号 ：<input type="text" name="id" value=""><br><br> 姓名 ：<input type="text" name="name" value=""><br><br> 性别 ：男
                         <input type="radio" name="sex" value="1" checked="checked">    女<input type="radio" name="sex" value="2">
                         <br><br> 年龄 ：
@@ -108,7 +109,7 @@
                     <h4 class="modal-title">新增教师信息</h4>
                 </div>
                 <div class="modal-body" style="text-align: center;">
-                    <form action="{:url('index/do_add_teacher')}" method="post" class="form-style">
+                    <form action="<?php echo url('admin/do_add_teacher'); ?>" method="post" class="form-style">
                         工号 ：<input type="text" name="id" value=""><br><br> 姓名 ：<input type="text" name="name" value=""><br><br> 专业 ：<input type="text" name="major" value=""><br><br> 密码：
                         <input type="text" name="password" value=""><br><br> 电话：
                         <input type="text" name="tel" value=""><br><br>
@@ -137,10 +138,10 @@
                 </div>
                 <div class="modal-body">
 
-                    <form action="{:url('index/publish_anno')}" method="post" enctype="multipart/form-data" class="form-style">
+                    <form action="<?php echo url('admin/publish_anno'); ?>" method="post" enctype="multipart/form-data" class="form-style">
 
-                        <td>公告 <input type="text" name="ad" value="{$info.ad}"></td><br><br>
-                        <!-- <input type="hidden" name="id" value="{$info.id}">
+                        <td>公告 <input type="text" name="ad" value="<?php echo $info['ad']; ?>"></td><br><br>
+                        <!-- <input type="hidden" name="id" value="<?php echo $info['id']; ?>">
                         <input type="submit" value="确定修改"> -->
 
 
@@ -148,7 +149,7 @@
 
 
 
-                        <!-- <li><a href="{:url('index/announcement')}">发布公告 <span class="sr-only">(current)</span></a></li> -->
+                        <!-- <li><a href="<?php echo url('index/announcement'); ?>">发布公告 <span class="sr-only">(current)</span></a></li> -->
 
 
                         <div class="modal-footer">
@@ -163,7 +164,7 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-    <!-- <br>教师编号<td>{$data.id}</td><br><td>{$data.name}老师</td> -->
+    <!-- <br>教师编号<td><?php echo $data['id']; ?></td><br><td><?php echo $data['name']; ?>老师</td> -->
 
     <nav class="navbar navbar-default">
         <div class="container">
@@ -182,20 +183,20 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-                    <li class="active"><a href="{:url('index/show_admin')}">首页 <span class="sr-only">(current)</span></a></li>
-                    <!-- <li><a href="{:url('index/add_user')}">添加学生 <span class="sr-only">(current)</span></a></li> -->
+                    <li class="active"><a href="<?php echo url('index/show_admin'); ?>">首页 <span class="sr-only">(current)</span></a></li>
+                    <!-- <li><a href="<?php echo url('index/add_user'); ?>">添加学生 <span class="sr-only">(current)</span></a></li> -->
                     <li id=bt1><a href="#">添加用户 <span class="sr-only">(current)</span></a></li>
-                    <!-- <li><a href="{:url('index/add_teacher')}">添加教师 <span class="sr-only">(current)</span></a></li> -->
+                    <!-- <li><a href="<?php echo url('index/add_teacher'); ?>">添加教师 <span class="sr-only">(current)</span></a></li> -->
                     <li id=bt2><a href="#">添加管理 <span class="sr-only">(current)</span></a></li>
-                    <!-- <li><a href="{:url('index/announcement')}">发布公告 <span class="sr-only">(current)</span></a></li> -->
+                    <!-- <li><a href="<?php echo url('index/announcement'); ?>">发布公告 <span class="sr-only">(current)</span></a></li> -->
                     <li id="bt3"><a href="#">发布公告 <span class="sr-only">(current)</span></a></li>
 
 
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{:url('index/logout')}">注销登录 <span class="sr-only">(current)</span></a></li>
-                    <!-- <li id="addbtn"><a href="{:url('index/add_user')}">注册</a></li> -->
+                    <li><a href="<?php echo url('index/logout'); ?>">注销登录 <span class="sr-only">(current)</span></a></li>
+                    <!-- <li id="addbtn"><a href="<?php echo url('index/add_user'); ?>">注册</a></li> -->
                 </ul>
             </div>
         </div>
@@ -252,20 +253,20 @@
                                             <th>电话</th>
                                             <th>操作</th>
                                         </tr>
-                                        {volist name="data_list" id="vo"}
+                                        <?php if(is_array($data_list) || $data_list instanceof \think\Collection || $data_list instanceof \think\Paginator): $i = 0; $__LIST__ = $data_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                                         <tr>
-                                            <td>{$vo.id}</td>
-                                            <td>{$vo.name}</td>
-                                            <td>{if condition="$vo.sex eq '1'"}男{elseif condition="$vo.sex eq '2'"}女{else /}保密{/if}</td>
-                                            <td>{$vo.age}</td>
-                                            <td>{$vo.tel}</td>
-                                            <td><a href="{:url('admin/edit_user_admin',['id' => $vo['id']])}" class="btn btn-success btn-xs">
-                              编辑</button> </a>&nbsp; &nbsp;<a href="{:url('index/del',['id' => $vo['id']])}" class="btn btn-danger btn-xs">
+                                            <td><?php echo $vo['id']; ?></td>
+                                            <td><?php echo $vo['name']; ?></td>
+                                            <td><?php if($vo['sex'] == '1'): ?>男<?php elseif($vo['sex'] == '2'): ?>女<?php else: ?>保密<?php endif; ?></td>
+                                            <td><?php echo $vo['age']; ?></td>
+                                            <td><?php echo $vo['tel']; ?></td>
+                                            <td><a href="<?php echo url('admin/edit_user_admin',['id' => $vo['id']]); ?>" class="btn btn-success btn-xs">
+                              编辑</button> </a>&nbsp; &nbsp;<a href="<?php echo url('admin/del',['id' => $vo['id']]); ?>" class="btn btn-danger btn-xs">
                               删除</button></a></td>
                                         </tr>
-                                        {/volist}
+                                        <?php endforeach; endif; else: echo "" ;endif; ?>
                                     </table>
-                                    <div>{$page}</div>
+                                    <div><?php echo $page; ?></div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="ios">
@@ -280,20 +281,20 @@
                                             <th>专业</th>
                                             <th>操作</th>
                                         </tr>
-                                        {volist name="data_list1" id="v1"}
+                                        <?php if(is_array($data_list1) || $data_list1 instanceof \think\Collection || $data_list1 instanceof \think\Paginator): $i = 0; $__LIST__ = $data_list1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v1): $mod = ($i % 2 );++$i;?>
                                         <tr>
-                                            <td>{$v1.id}</td>
-                                            <td>{$v1.name}</td>
-                                            <td>{$v1.tel}</td>
-                                            <td>{$v1.major}</td>
-                                            <td><a href="{:url('admin/edit_teacher_admin',['id' => $v1['id']])}" class="btn btn-success btn-xs">编辑</a>&nbsp; &nbsp;
-                                                <a href="{:url('index/del_t',['id' => $v1['id']])}" class="btn btn-danger btn-xs">删除</a></td>
+                                            <td><?php echo $v1['id']; ?></td>
+                                            <td><?php echo $v1['name']; ?></td>
+                                            <td><?php echo $v1['tel']; ?></td>
+                                            <td><?php echo $v1['major']; ?></td>
+                                            <td><a href="<?php echo url('admin/edit_teacher_admin',['id' => $v1['id']]); ?>" class="btn btn-success btn-xs">编辑</a>&nbsp; &nbsp;
+                                                <a href="<?php echo url('admin/del_t',['id' => $v1['id']]); ?>" class="btn btn-danger btn-xs">删除</a></td>
                                         </tr>
-                                        {/volist}
+                                        <?php endforeach; endif; else: echo "" ;endif; ?>
 
 
                                     </table>
-                                    <div>{$page1}</div>
+                                    <div><?php echo $page1; ?></div>
 
 
 
@@ -314,20 +315,20 @@
                                             <th>公告</th>
 
                                         </tr>
-                                        {volist name="data_list3" id="v3"}
+                                        <?php if(is_array($data_list3) || $data_list3 instanceof \think\Collection || $data_list3 instanceof \think\Paginator): $i = 0; $__LIST__ = $data_list3;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v3): $mod = ($i % 2 );++$i;?>
                                         <tr>
-                                            <td>{$v3.id}</td>
-                                            <td>{$v3.name}</td>
-                                            <td>{$v3.ad}</td>
+                                            <td><?php echo $v3['id']; ?></td>
+                                            <td><?php echo $v3['name']; ?></td>
+                                            <td><?php echo $v3['ad']; ?></td>
 
 
 
                                         </tr>
-                                        {/volist}
+                                        <?php endforeach; endif; else: echo "" ;endif; ?>
 
 
                                     </table>
-                                    <div>{$page1}</div>
+                                    <div><?php echo $page1; ?></div>
 
 
 

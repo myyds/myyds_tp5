@@ -23,7 +23,9 @@ class User extends Model{
 
 
    //使用字符串
-    protected $connection= "mysql://root:123456@127.0.0.1/mall#utf8";
+    // protected $connection= "mysql://root:123456@127.0.0.1/mall#utf8";
+
+    
    
 
 }

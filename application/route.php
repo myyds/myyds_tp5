@@ -11,7 +11,7 @@
 
 use think\Route;
 //静态路由
-Route::rule('/','index/index/index');
+// Route::rule('/','index/index/index');
 // Route::rule('/','index/index/index');
 // Route::rule('test','test/test/test');
 

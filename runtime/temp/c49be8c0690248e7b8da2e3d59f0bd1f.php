@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:85:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\index\manage_user.html";i:1639231871;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
  <head>
@@ -54,16 +55,16 @@ span{
         <span  class="glyphicon glyphicon-chevron-left" style="font-size:30px"
                     onclick="javascript:window.history.go(-1)"></span>
         <div class="col-md-4"><h3>审核学生名单</h3>
-          <form action="{:url('index/do_check')}" method="post" enctype="multipart/form-data" class="form-style">
+          <form action="<?php echo url('index/do_check'); ?>" method="post" enctype="multipart/form-data" class="form-style">
 
 
 
             
-            {volist name="check_student" id="vo"}
-            <input type="radio" name="like[]" value={$vo.theme_id}>学号:{$vo.student_id}&nbsp&nbsp&nbsp&nbsp选题学生:{$vo.name}&nbsp&nbsp&nbsp选题:{$vo.theme_id}<br>
-            {/volist}
+            <?php if(is_array($check_student) || $check_student instanceof \think\Collection || $check_student instanceof \think\Paginator): $i = 0; $__LIST__ = $check_student;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+            <input type="radio" name="like[]" value=<?php echo $vo['theme_id']; ?>>学号:<?php echo $vo['student_id']; ?>&nbsp&nbsp&nbsp&nbsp选题学生:<?php echo $vo['name']; ?>&nbsp&nbsp&nbsp选题:<?php echo $vo['theme_id']; ?><br>
+            <?php endforeach; endif; else: echo "" ;endif; ?>
             
-            <input type="hidden" name="id"  value="{$info.id}">
+            <input type="hidden" name="id"  value="<?php echo $info['id']; ?>">
             <input type="submit" value="确定修改">
             
             

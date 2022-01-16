@@ -11,6 +11,28 @@ header("Content-type:text/html;charset=UTF-8");
 class Admin extends Controller
 {
    
+    public function show_admin()
+    {   
+        
+        // $result = Db::name('user')->order('id desc')->paginate(10);
+        $result = Db::name('user')->order('id')->paginate(10);
+        $page = $result->render();
+        $this->assign('data_list',$result);
+        $this->assign('page',$page);
+
+        $result1 = Db::name('teacher')->order('id')->paginate(10);
+        $page1 = $result1->render();
+        $this->assign('data_list1',$result1);
+        $this->assign('page1',$page1);
+
+        $result3 = Db::name('admin')->order('id')->paginate(10);
+        $page3 = $result->render();
+        $this->assign('data_list3',$result3);
+        $this->assign('page3',$page3);
+        
+        return $this->fetch('admin/show_admin');
+    }
+
 
     public function edit_user_admin(){
         //查询教师资料
@@ -23,8 +45,58 @@ class Admin extends Controller
                   return $this->fetch('update_admin',array('info'=>$info,'info1'=>$info1),['__IMG__'=>'/uploads']);
               }
           }
-      
-      public function do_edit_user_admin(){
+
+
+          public function publish_anno(){
+            if(request()->isPost()){
+            $data['ad'] = input('ad');
+            $res = Db::name('admin')
+                    ->where('id','1')
+                    ->update($data);
+            if($res){
+                $this->success('更新成功','admin/show_admin');
+            }else{
+                $this->error('无更新内容');
+            }
+        }
+        }
+      //添加用户信息
+public function do_add_user() 
+{
+    
+    if(request()->isPost()){
+        $data = input('post.');
+        // $data['password'] = md5(input('password'));//密码加密
+        if(strlen($data['id'])==10){
+            $add_res = Db::name('user')->insert($data);
+        }else{
+            return $this->error('请输入正确的学号');
+        }
+        
+        if($add_res){
+            $this->success('新增成功','admin/show_admin');
+        }else{
+            return $this->error('新增失败!');
+        }
+    }
+}
+//添加用户信息
+public function do_add_teacher() 
+{
+   
+    if(request()->isPost()){
+        $data = input('post.');
+        $add_res = Db::name('teacher')->insert($data);
+        if($add_res){
+            $this->success('新增成功','admin/show_admin');
+        }else{
+            return $this->error('新增失败!');
+        }
+    }
+}
+     
+
+public function do_edit_user_admin(){
            //管理员编辑用户信息
               if(request()->isPost()){
                   //接收传值
@@ -55,9 +127,9 @@ class Admin extends Controller
                           ->where('id',input('post.id'))
                           ->update($data);
                   if($res){
-                      $this->success('更新成功','index/show_admin');
+                      $this->success('更新成功','admin/show_admin');
                   }else{
-                      $this->error('无更新内容!','index/show_admin');
+                      $this->error('无更新内容!','admin/show_admin');
                   }
               }
               public function edit_teacher_admin(){
@@ -70,7 +142,8 @@ class Admin extends Controller
                         return $this->fetch('do_edit_teacher_admin',array('info'=>$info));
                     }
                 }
-                public function do_edit_teacher_admin(){
+              
+  public function do_edit_teacher_admin(){
                     //修改用户信息
                         if(request()->isPost()){
                             //接收传值
@@ -84,10 +157,38 @@ class Admin extends Controller
                                     ->where('id',input('post.id'))
                                     ->update($data);
                             if($res){
-                                $this->success('更新成功','index/show_admin');
+                                $this->success('更新成功','admin/show_admin');
                             }else{
-                                $this->error('无更新内容!','index/show_admin');
+                                $this->error('无更新内容!','admin/show_admin');
                             }
                         }
                     }
+                      //删除用户信息
+    public function del(){
+        if(request()->isGet()){
+            $del_id = input('id');
+            $res = Db::name('user')
+                    ->where('id',$del_id)
+                    ->delete();
+            if($res){
+                $this->success('删除成功！','admin/show_admin');
+            }else{
+                $this->error('删除失败!');
+            }
+        }
+    }
+public function del_t(){
+        if(request()->isGet()){
+            $del_id = input('id');
+            $res = Db::name('teacher')
+                    ->where('id',$del_id)
+                    ->delete();
+            if($res){
+                $this->success('删除成功！','admin/show_admin');
+            }else{
+                $this->error('删除失败!');
+            }
+        }
+    }
+
 }
