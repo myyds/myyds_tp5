@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\user\paper_user.html";i:1642314829;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\user\paper_user.html";i:1642322889;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -73,7 +73,7 @@
 
 
 
-    <form action="<?php echo url('index/do_uploadpaper3'); ?>" method="post" enctype="multipart/form-data" class="form-style">
+    <form action="<?php echo url('user/do_uploadpaper3'); ?>" method="post" enctype="multipart/form-data" class="form-style">
 
 
         <td>终稿

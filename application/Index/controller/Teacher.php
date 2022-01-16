@@ -102,7 +102,7 @@ public function uploadpaper2(){//上传学生照片
         $info = Db::name('user')
                 ->where('id',$id)
                 ->find();
-        return $this->fetch('teacher/paper_state',array('info'=>$info),['__IMG__'=>'/uploads']);
+        return $this->fetch('teacher/paper_teacher',array('info'=>$info),['__IMG__'=>'/uploads']);
     }
 }
 public function do_updatapw_t(){
