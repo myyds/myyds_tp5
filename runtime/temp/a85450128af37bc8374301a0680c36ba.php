@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:95:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\do_edit_teacher_admin.html";i:1642243858;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:95:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\do_edit_teacher_admin.html";i:1642320387;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,22 +16,13 @@
     <div class="row">
         <div class=" col-md-4 col-md-offset-4">
 
+
             <!-- <form role="form"> -->
             <form action="<?php echo url('admin/do_edit_teacher_admin'); ?>" method="post" enctype="multipart/form-data" class="form-style">
-
                 <br>
                 <br>
 
                 <div class="form-group">
-                    <!-- <td>姓名 <input type="text" name="name" value="<?php echo $info['name']; ?>"></td><br><br>
-
-
-<td>专业 <input type="text" name="major" value="<?php echo $info['major']; ?>"></td><br><br>
-
-<td>电话 <input type="text" name="tel" value="<?php echo $info['tel']; ?>"><br><br></td> -->
-                    <!-- <td>密码<input type="text" name="password" value="<?php echo $info['password']; ?>"><br><br></td> -->
-
-
                     <label for="name">姓名</label>
                     <input type="text" class="form-control" id="name" name="name" value="<?php echo $info['name']; ?>" placeholder="请输入名称">
                     <label for="name">专业</label>
@@ -40,46 +31,20 @@
                     <input type="text" class="form-control" name="tel" value="<?php echo $info['tel']; ?>" placeholder="请输入电话">
 
                     <!-- 无此行无法跳转 -->
-                    <!-- <input type="hidden" name="id" value="<?php echo $info['id']; ?>"> -->
-
                     <input type="hidden" value="<?php echo $info['id']; ?>" name="id">
 
-                    <!-- <input type="submit" value="确定修改"> -->
 
 
                     <div class="checkbox">
                         <label>
 								<input type="checkbox"> 请打勾
 							</label>
+
                     </div>
                     <button type="submit" class="btn btn-default">提交</button>
             </form>
             </div>
         </div>
-
-
-
-
-
-
 </body>
-
-
-
-
-</html>
-
-
-
-
-
-
-
-
-<!-- <input type="hidden" name="id"  value="<?php echo $info['id']; ?>"> -->
-<!-- <input type="submit" value="确定修改"> -->
-
-</body>
-</form>
 
 </html>

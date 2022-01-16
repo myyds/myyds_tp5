@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:88:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\teacher\show_teacher.html";i:1642317126;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:88:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\teacher\show_teacher.html";i:1642320277;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -223,7 +223,7 @@
                     </li>
 
                     <li>
-                        <a href="<?php echo url('index/logout'); ?>"> <span><i class="glyphicon glyphicon-off"></i></span> 注销登录</a>
+                        <a href="<?php echo url('index/logout'); ?>">  注销登录</a>
                     </li>
                 </ul>
             </div>

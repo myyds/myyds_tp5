@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\update_admin.html";i:1639197297;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\update_admin.html";i:1642320277;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,22 +11,14 @@
 </head>
 <meta charset="UTF-8">
 <title>更新信息</title>
-<!-- <link rel="stylesheet" href="/static/css/main.css"> -->
-
-<!-- Stack the columns on mobile by making one full-width and the other half-width -->
-
-
-<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-
-
-
 
 <body>
     <div class="row">
         <div class=" col-md-4 col-md-offset-4">
 
             <!-- <form role="form"> -->
-            <form action="<?php echo url('admin/do_edit_user_admin'); ?>" method="post" enctype="multipart/form-data" class="form-style">
+            <form action="<?php echo url('admin/do_edit_user_admin'); ?>" method="post" enctype="multipart/form-data"
+                class="form-style">
 
                 <br>
                 <br>
@@ -35,14 +27,15 @@
                     <label for="name">ID</label>
                     <input type="text" class="form-control" id="id" name="name" value="<?php echo $info['id']; ?>" placeholder="请输入名称">
                     <label for="name">姓名</label>
-                    <input type="text" class="form-control" id="name" name="name" value="<?php echo $info['name']; ?>" placeholder="请输入名称">
+                    <input type="text" class="form-control" id="name" name="name" value="<?php echo $info['name']; ?>"
+                        placeholder="请输入名称">
                     <br>
-                    <label for="name">性别<?php if($info['sex'] == '1'): ?></label>
-                    <td>
-                        男<input type="radio" name="sex" value="1" checked="checked"> 女
-                        <input type="radio" name="sex" value="2"> <?php elseif($info['sex'] == '2'): ?> 男
-                        <input type="radio" name="sex" value="1"> 女
-                        <input type="radio" name="sex" value="2" checked="checked"> <?php endif; ?>
+                    <label for="name">性别</label>
+                    <td><?php if($info['sex'] == '1'): ?>
+                        男<input type="radio" name="sex" value="1" checked="checked">
+                        女<input type="radio" name="sex" value="2"> <?php elseif($info['sex'] == '2'): ?> 
+                        男<input type="radio" name="sex" value="1"> 
+                        女<input type="radio" name="sex" value="2" checked="checked"> <?php endif; ?>
                     </td>
                     <!-- <input type="text" class="form-control" id="name" name="name" value="<?php echo $info['name']; ?>" placeholder="请输入名称"> -->
                     <br><br>
@@ -53,7 +46,8 @@
                     <label for="name">邮箱</label>
                     <input type="text" class="form-control" name="email" value="<?php echo $info['email']; ?>" placeholder="请输入邮箱">
                     <label for="name">家庭住址</label>
-                    <input type="text" class="form-control" name="family_adress" value="<?php echo $info['family_adress']; ?>" placeholder="请输入家庭地址">
+                    <input type="text" class="form-control" name="family_adress" value="<?php echo $info['family_adress']; ?>"
+                        placeholder="请输入家庭地址">
                     <label for="name">证件号码</label>
                     <input type="text" class="form-control" name="id_" value="<?php echo $info['id_']; ?>" placeholder="请输入证件号码">
                     <label for="name">专业</label>
@@ -124,9 +118,7 @@
                 <!-- </td> -->
 
 
-                <td>
-
-                </td>
+               
 
 
                 <div class="form-group">
@@ -147,20 +139,15 @@
 				<input type="file" name="paper">
 			</td> -->
 
-                <br /> <br />
+                <br/> <br/>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> 请打勾
+                    </label>
+                </div>
 
                 <!-- 无此行无法跳转 -->
                 <input type="hidden" name="id" value="<?php echo $info['id']; ?>">
-
-
-                <!-- <input type="submit" value="确定修改"> -->
-
-
-                <div class="checkbox">
-                    <label>
-								<input type="checkbox"> 请打勾
-							</label>
-                </div>
                 <button type="submit" class="btn btn-default">提交</button>
             </form>
         </div>
@@ -172,8 +159,5 @@
 
 
 </body>
-
-
-
 
 </html>
