@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html";i:1642388804;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html";i:1642434374;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -234,7 +234,7 @@
                               <b class="caret"></b>
                             </a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-                                    <li><a href="#jmeter" tabindex="-1" data-toggle="tab">管理员</a></li>
+                                    <li><a href="#jmeter" tabindex="-1" data-toggle="tab">管理员<?php echo $countuser; ?><?php echo $countteacher; ?></a></li>
                                     <li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>
                                 </ul>
                             </li>

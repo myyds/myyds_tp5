@@ -5,6 +5,9 @@ use think\Model;
 use think\Db;
 use think\Request;
 use think\Session;
+use \app\index\model\User;
+use \app\index\model\Teacher;
+
 
 
 header("Content-type:text/html;charset=UTF-8");
@@ -13,41 +16,45 @@ class Admin extends Controller
    
     public function show_admin()
     {   
-        
-        // $result = Db::name('user')->order('id desc')->paginate(10);
-        $result = Db::name('user')->order('id')->paginate(10);
+        $result = Db::name('user')->order('id')->paginate(8);
         $page = $result->render();
         $this->assign('data_list',$result);
         $this->assign('page',$page);
-
-        $result1 = Db::name('teacher')->order('id')->paginate(10);
+        
+        $result1 = Db::name('teacher')->order('id')->paginate(8);
         $page1 = $result1->render();
         $this->assign('data_list1',$result1);
         $this->assign('page1',$page1);
 
         $result3 = Db::name('admin')->order('id')->paginate(10);
-        $page3 = $result->render();
+        $page3 = $result3->render();
         $this->assign('data_list3',$result3);
         $this->assign('page3',$page3);
+
+        $countuser = User::count();
+        $countteacher = Teacher::count();
+        $this->assign('countuser', $countuser);
+        $this->assign('countteacher',$countteacher);
+
+
         
         return $this->fetch('admin/show_admin');
     }
 
 
     public function edit_user_admin(){
-        //查询教师资料
+        //编辑教师资料
               if(request()->isGet()){
                     $info1 = Db::name('teacher')->select();
                   $id = input('id');
-                  $info = Db::name('user')
-                          ->where('id',$id)
+                  $info = User::where('id',$id)
                           ->find();
                   return $this->fetch('update_admin',array('info'=>$info,'info1'=>$info1),['__IMG__'=>'/uploads']);
               }
           }
 
-
-          public function publish_anno(){
+    //发布公告
+    public function publish_anno(){
             if(request()->isPost()){
             $data['ad'] = input('ad');
             $res = Db::name('admin')
@@ -60,7 +67,9 @@ class Admin extends Controller
             }
         }
         }
-      //添加用户信息
+
+
+    //添加用户信息
 public function do_add_user() 
 {
     
@@ -86,7 +95,7 @@ public function do_add_teacher()
    
     if(request()->isPost()){
         $data = input('post.');
-        $add_res = Db::name('teacher')->insert($data);
+        $add_res = Teacher::create($data);
         if($add_res){
             $this->success('新增成功','admin/show_admin');
         }else{
@@ -132,7 +141,10 @@ public function do_edit_user_admin(){
                       $this->error('无更新内容!','admin/show_admin');
                   }
               }
-              public function edit_teacher_admin(){
+
+
+
+public function edit_teacher_admin(){
                 //查询单条用户信息
                     if(request()->isGet()){
                         $id = input('id');
@@ -149,13 +161,10 @@ public function do_edit_user_admin(){
                             //接收传值
                             $data['name'] = input('name');
                             $data['major'] = input('major');
-                            //$data['age'] = input('age');
                             $data['tel'] = input('tel');
-                            // $data['password'] = input('password');
                             //执行修改
-                            $res = Db::name('teacher')
-                                    ->where('id',input('post.id'))
-                                    ->update($data);
+                            $teacher = new Teacher;
+                            $res = $teacher->save($data,['id'=>input('post.id')]);
                             if($res){
                                 $this->success('更新成功','admin/show_admin');
                             }else{
@@ -163,28 +172,29 @@ public function do_edit_user_admin(){
                             }
                         }
                     }
-                      //删除用户信息
+
+
+    //删除用户信息
     public function del(){
         if(request()->isGet()){
             $del_id = input('id');
-            $res = Db::name('user')
-                    ->where('id',$del_id)
-                    ->delete();
+            $res = User::destroy($del_id);
             if($res){
-                $this->success('删除成功！','admin/show_admin');
+                $this->success('删除成功!','admin/show_admin');
             }else{
                 $this->error('删除失败!');
             }
         }
     }
-public function del_t(){
+
+
+    //删除教师
+    public function del_t(){
         if(request()->isGet()){
             $del_id = input('id');
-            $res = Db::name('teacher')
-                    ->where('id',$del_id)
-                    ->delete();
+            $res = Teacger::destroy($del_id);
             if($res){
-                $this->success('删除成功！','admin/show_admin');
+                $this->success('删除成功!','admin/show_admin');
             }else{
                 $this->error('删除失败!');
             }
