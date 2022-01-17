@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\user\paper_user.html";i:1642322889;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\user\paper_user.html";i:1642390662;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -18,23 +18,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 
 
-    <!-- <div class="content">
-        <h1 class="title"> 欢迎使用桂林电子科技大学北海校区毕业设计管理系统</h1>
-        <div class="add">
-            <ul class="nav nav-pills">
-                <li role="presentation"><a href="<?php echo url('index/show_user'); ?>">选题信息</a></li>
-                <li role="presentation"><a href="<?php echo url('index/edit_user'); ?>?id=<?php echo $data['id']; ?>">修改信息</a></li>
-                <li role="presentation" class="active"><a href="<?php echo url('index/uploadpaper'); ?>?id=<?php echo $data['id']; ?>">论文管理</a></li>
-                <li role="presentation"><a href="<?php echo url('index/updatapw_u'); ?>?id=<?php echo $data['id']; ?>">修改密码</a></li>
-                <li role="presentation"><a href="<?php echo url('index/select_t'); ?>?id=<?php echo $data['id']; ?>">选择导师</a></li>
-                <li role="presentation"><a href="<?php echo url('index/logout'); ?>">注销登录</a></li>
-            </ul> -->
-
-    <!--  <nav aria-label="...">
-  <ul class="pager">
-    <li class="next"><a href="<?php echo url('index/logout'); ?>">注销登录 <span aria-hidden="true">&rarr;</span></a></li>
-  </ul>
-</nav> -->
 
 
     <form action="<?php echo url('index/do_uploadpaper'); ?>" method="post" enctype="multipart/form-data" class="form-style">
@@ -48,7 +31,13 @@
 
 
         </td>
-        <label for="">提交状态</label> <?php if($info['paper'] == null): ?> <span class="glyphicon glyphicon-remove"></span> <?php else: ?> <span class="glyphicon glyphicon-ok"></span> <?php endif; ?>
+        <label for="">提交状态</label> <?php if($info['paper'] == null): ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg> <?php else: ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+          </svg> <?php endif; ?>
         <a href="/uploads/<?php echo $info['paper']; ?>" download="<?php echo $info['id']; ?>.docx">下载</a>
 
         <br>
@@ -83,7 +72,13 @@
 
 
         </td>
-        <label for="">提交状态</label> <?php if($info['paper3'] == null): ?> <span class="glyphicon glyphicon-remove"></span> <?php else: ?> <span class="glyphicon glyphicon-ok"></span> <?php endif; ?>
+        <label for="">提交状态</label> <?php if($info['paper3'] == null): ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg> <?php else: ?><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+          </svg> <?php endif; ?>
         <a href="/uploads/<?php echo $info['paper3']; ?>" download="<?php echo $info['id']; ?>.docx">下载</a>
 
         <br>

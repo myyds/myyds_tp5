@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:88:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\teacher\show_teacher.html";i:1642320277;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:88:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\teacher\show_teacher.html";i:1642390863;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -73,7 +73,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="#">
-                            <span style="color: red;"><i class="glyphicon glyphicon-user"></i></span> <strong>
+                           
                                 管理员编号</strong><?php echo $data['id']; ?> <strong>姓名</strong> <?php echo $data['name']; ?>
                         </a>
                     </li>

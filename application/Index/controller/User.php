@@ -13,7 +13,6 @@ class User extends Controller
    
     //显示学生页面
 public function show_user(){
-
     $result = session::get('id'); 
     $data = Db::table('user')->where('id',$result)->find();
     
@@ -64,6 +63,9 @@ public function do_edit_user(){
             $this->error('更新成功!');
         }
     }
+
+
+//选择导师及选题 
     public function select_t(){
         if(request()->isGet()){
               $info1 = Db::name('teacher')->select();//获取老师名字
@@ -74,7 +76,9 @@ public function do_edit_user(){
              return $this->fetch('select_t',array('info'=>$info,'info1'=>$info1));
          }
      }
- //学生选择选题 
+
+
+ //选择导师及选题 
      public function do_select_t(){  
         if(request()->isPost()){ 
              $data['teacher_id'] = input('teacher_id');
@@ -84,7 +88,9 @@ public function do_edit_user(){
             return $this->fetch('select_t',array('theme_id'=>$res));
              }
          }
-    public function do_updatapw_u(){
+   
+//  更换密码
+     public function do_updatapw_u(){
 
         if(request()->isPost()){
                 
@@ -101,7 +107,10 @@ public function do_edit_user(){
                 }
             }
     }
-public function uploadpaper(){//上传学生照片
+
+
+//上传学生照片
+public function uploadpaper(){
     if(request()->isGet()){
         $id = input('id');
         $info = Db::name('user')
@@ -110,7 +119,9 @@ public function uploadpaper(){//上传学生照片
         return $this->fetch('user/paper_user',array('info'=>$info),['__IMG__'=>'/uploads']);
     }
 }
-public function uploadpaper2(){//上传学生照片
+
+//上传学生照片
+public function uploadpaper2(){
     if(request()->isGet()){
         $id = input('id');
         $info = Db::name('user')
@@ -120,6 +131,8 @@ public function uploadpaper2(){//上传学生照片
     }
 }
 
+
+// 选择选题
 public function do_select_theme(){        
     if(request()->isPost()){ 
          $data['student_id'] = session('id');//学生id
@@ -139,6 +152,8 @@ public function do_select_theme(){
      }
 }
 
+
+// 上传论文
 public function do_uploadpaper(){
     if(request()->isPost()){
       //上传论文
@@ -164,7 +179,7 @@ public function do_uploadpaper(){
   }
   }
   
-  
+//   上传终稿
   public function do_uploadpaper3(){
     if(request()->isPost()){
       //上传论文

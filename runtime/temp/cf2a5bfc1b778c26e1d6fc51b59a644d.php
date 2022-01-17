@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html";i:1642242894;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html";i:1642388804;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
