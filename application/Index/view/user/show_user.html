@@ -68,7 +68,7 @@
                             <!-- <li><a href="{:url('index/updatapw_u')}?id={$data.id}">修改密码</a></li> -->
                             <li id="usp"><a href="#">修改密码</a></li>
 
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">其他</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Separated link</a></li>
                         </ul>
@@ -138,11 +138,11 @@
 
 
                                 <td>头像
-                                    <img src="__IMG__/{$data.img}" width="100px;" height="100px;">
+                                    <img src="/uploads/{$data.img}" width="100px;" height="100px;">
                                     <!-- 显示img -->
                                     <input type="hidden" name="old_img" value="{$data.img}">
                                     <!-- 输入img -->
-                                    <!-- <a href="__IMG__/{$info.img}" download="{$info.id}.jpg">下载头像</a> -->
+                                    <a href="/uploads/{$data.img}" download="{$data.id}.jpg">下载头像</a>
                                     <input type="file" name="img">
                                 </td>
 
@@ -160,8 +160,8 @@
                         <div class="modal-footer">
                             <input type="hidden" name="id" value="{$data.id}">
 
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="submit" class="btn btn-primary">保存</button>
                         </div>
                         </form>
                     </div>
@@ -188,8 +188,8 @@
 
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="submit" class="btn btn-primary">保存</button>
                                 </div>
                             </form>
                         </div>
@@ -201,100 +201,14 @@
             <!-- /.modal -->
             <!-- Nav tabs -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
-
     </div>
-
     </div>
-
-
-
-
-
-
-
-
-
-
-    <!-- 
-
-        <li role="presentation"><a href="{:url('index/uploadpaper')}?id={$data.id}">论文管理</a></li>
-
-        <li role="presentation"><a href="{:url('index/select_t')}?id={$data.id}">选择导师</a></li> -->
-
     </ul>
-
-
     </div>
     </div>
 
 
-    <!-- 已选课题:{$teacher.theme_name}<br>
-已选教师编号:{$teacher.teacher_id}<br>
-已选教师姓名:{$teacher.name}<br> -->
-
-
-    <!-- <table border="1" cellpadding="10" cellspacing="0">
-<tr>
-<td>教师编号</td>
-<td width="50px">姓名</td>
-<td>专业</td>
-<td>主题1</td>
-<td>主题2</td>
-<td>主题3</td>
-<td>主题4</td>
-<td>主题5</td>
-<td>主题6</td>
-<td>主题7</td>
-<td>主题8</td>
-</tr>
-{volist name="data_list" id="vo"}
-<tr>
-<td>{$vo.id}</td>
-<td>{$vo.name}</td>
-<td>{$vo.major}</td>
-<td>{$vo.theme}</td>
-<td>{$vo.theme2}</td>
-<td>{$vo.theme3}</td>
-<td>{$vo.theme4}</td>
-<td>{$vo.theme5}</td>
-<td>{$vo.theme6}</td>
-<td>{$vo.theme7}</td>
-<td>{$vo.theme8}</td>
-
-<td><a href="{:url('index/edit_user',['id' => $vo['id']])}">编辑</a> | <a href="{:url('index/del',['id' => $vo['id']])}">删除</a></td>
-</tr>
-{/volist}
-
-
-
-<div>{$page}</div>
-
-
-
-
-
-
-
-
-
-</table> -->
 
 </body>
 

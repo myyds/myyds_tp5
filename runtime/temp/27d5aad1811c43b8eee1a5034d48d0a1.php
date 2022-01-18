@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\update_admin.html";i:1642497634;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\updateuser_admin.html";i:1642498123;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -142,7 +142,7 @@
                 <br/> <br/>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox"> 请打勾
+                        <input type="checkbox"> 请确保信息真实性并打勾
                     </label>
                 </div>
 

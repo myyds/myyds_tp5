@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:82:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\user\show_user.html";i:1642388804;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:82:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\user\show_user.html";i:1642500611;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -69,7 +69,7 @@
                             <!-- <li><a href="<?php echo url('index/updatapw_u'); ?>?id=<?php echo $data['id']; ?>">修改密码</a></li> -->
                             <li id="usp"><a href="#">修改密码</a></li>
 
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">其他</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Separated link</a></li>
                         </ul>
@@ -139,11 +139,11 @@
 
 
                                 <td>头像
-                                    <img src="__IMG__/<?php echo $data['img']; ?>" width="100px;" height="100px;">
+                                    <img src="/uploads/<?php echo $data['img']; ?>" width="100px;" height="100px;">
                                     <!-- 显示img -->
                                     <input type="hidden" name="old_img" value="<?php echo $data['img']; ?>">
                                     <!-- 输入img -->
-                                    <!-- <a href="__IMG__/<?php echo $info['img']; ?>" download="<?php echo $info['id']; ?>.jpg">下载头像</a> -->
+                                    <a href="/uploads/<?php echo $data['img']; ?>" download="<?php echo $data['id']; ?>.jpg">下载头像</a>
                                     <input type="file" name="img">
                                 </td>
 
@@ -161,8 +161,8 @@
                         <div class="modal-footer">
                             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
 
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="submit" class="btn btn-primary">保存</button>
                         </div>
                         </form>
                     </div>
@@ -189,8 +189,8 @@
 
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="submit" class="btn btn-primary">保存</button>
                                 </div>
                             </form>
                         </div>
@@ -202,100 +202,14 @@
             <!-- /.modal -->
             <!-- Nav tabs -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
-
     </div>
-
     </div>
-
-
-
-
-
-
-
-
-
-
-    <!-- 
-
-        <li role="presentation"><a href="<?php echo url('index/uploadpaper'); ?>?id=<?php echo $data['id']; ?>">论文管理</a></li>
-
-        <li role="presentation"><a href="<?php echo url('index/select_t'); ?>?id=<?php echo $data['id']; ?>">选择导师</a></li> -->
-
     </ul>
-
-
     </div>
     </div>
 
 
-    <!-- 已选课题:<?php echo $teacher['theme_name']; ?><br>
-已选教师编号:<?php echo $teacher['teacher_id']; ?><br>
-已选教师姓名:<?php echo $teacher['name']; ?><br> -->
-
-
-    <!-- <table border="1" cellpadding="10" cellspacing="0">
-<tr>
-<td>教师编号</td>
-<td width="50px">姓名</td>
-<td>专业</td>
-<td>主题1</td>
-<td>主题2</td>
-<td>主题3</td>
-<td>主题4</td>
-<td>主题5</td>
-<td>主题6</td>
-<td>主题7</td>
-<td>主题8</td>
-</tr>
-<?php if(is_array($data_list) || $data_list instanceof \think\Collection || $data_list instanceof \think\Paginator): $i = 0; $__LIST__ = $data_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-<tr>
-<td><?php echo $vo['id']; ?></td>
-<td><?php echo $vo['name']; ?></td>
-<td><?php echo $vo['major']; ?></td>
-<td><?php echo $vo['theme']; ?></td>
-<td><?php echo $vo['theme2']; ?></td>
-<td><?php echo $vo['theme3']; ?></td>
-<td><?php echo $vo['theme4']; ?></td>
-<td><?php echo $vo['theme5']; ?></td>
-<td><?php echo $vo['theme6']; ?></td>
-<td><?php echo $vo['theme7']; ?></td>
-<td><?php echo $vo['theme8']; ?></td>
-
-<td><a href="<?php echo url('index/edit_user',['id' => $vo['id']]); ?>">编辑</a> | <a href="<?php echo url('index/del',['id' => $vo['id']]); ?>">删除</a></td>
-</tr>
-<?php endforeach; endif; else: echo "" ;endif; ?>
-
-
-
-<div><?php echo $page; ?></div>
-
-
-
-
-
-
-
-
-
-</table> -->
 
 </body>
 

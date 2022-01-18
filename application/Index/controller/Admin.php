@@ -14,6 +14,13 @@ header("Content-type:text/html;charset=UTF-8");
 class Admin extends Controller
 {
    
+    //初始化方法
+ public function _initialize(){
+    $havesession = session('?id');
+    if($havesession==null){
+        $this->error('登陆超时','index/index');
+    }
+}
     public function show_admin()
     {   
         $result = Db::name('user')->order('id')->paginate(8);
@@ -49,7 +56,7 @@ class Admin extends Controller
                   $id = input('id');
                   $info = User::where('id',$id)
                           ->find();
-                  return $this->fetch('update_admin',array('info'=>$info,'info1'=>$info1),['__IMG__'=>'/uploads']);
+                  return $this->fetch('updateuser_admin',array('info'=>$info,'info1'=>$info1),['__IMG__'=>'/uploads']);
               }
           }
 
@@ -95,7 +102,9 @@ public function do_add_teacher()
    
     if(request()->isPost()){
         $data = input('post.');
+        if($data['id']){
         $add_res = Teacher::create($data);
+        }
         if($add_res){
             $this->success('新增成功','admin/show_admin');
         }else{
@@ -151,7 +160,7 @@ public function edit_teacher_admin(){
                         $info = Db::name('teacher')
                                 ->where('id',$id)
                                 ->find();
-                        return $this->fetch('do_edit_teacher_admin',array('info'=>$info));
+                        return $this->fetch('updateteacher_admin',array('info'=>$info));
                     }
                 }
               
@@ -192,7 +201,7 @@ public function edit_teacher_admin(){
     public function del_t(){
         if(request()->isGet()){
             $del_id = input('id');
-            $res = Teacger::destroy($del_id);
+            $res = Teacher::destroy($del_id);
             if($res){
                 $this->success('删除成功!','admin/show_admin');
             }else{

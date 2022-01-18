@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html";i:1642434374;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html";i:1642498199;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -225,16 +225,16 @@
                         <ul id="myTab" class="nav nav-tabs">
                             <li class="active">
                                 <a href="#home" data-toggle="tab">
-                              用户
+                              用户<?php echo $countuser; ?>
                             </a>
                             </li>
-                            <li><a href="#ios" data-toggle="tab">管理</a></li>
+                            <li><a href="#ios" data-toggle="tab">管理<?php echo $countteacher; ?></a></li>
                             <li class="dropdown">
                                 <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">其他
                               <b class="caret"></b>
                             </a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-                                    <li><a href="#jmeter" tabindex="-1" data-toggle="tab">管理员<?php echo $countuser; ?><?php echo $countteacher; ?></a></li>
+                                    <li><a href="#jmeter" tabindex="-1" data-toggle="tab">管理员</a></li>
                                     <li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>
                                 </ul>
                             </li>

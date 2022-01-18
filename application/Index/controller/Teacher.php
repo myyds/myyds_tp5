@@ -10,7 +10,13 @@ use think\Session;
 header("Content-type:text/html;charset=UTF-8");
 class Teacher extends Controller
 {
-   
+   //初始化方法
+ public function _initialize(){
+    $havesession = session('?id');
+    if($havesession==null){
+        $this->error('登陆超时','index/index');
+    }
+}
     //显示教师页面
 public function show_teacher(){
     

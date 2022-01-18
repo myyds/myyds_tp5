@@ -10,7 +10,15 @@ use think\Session;
 header("Content-type:text/html;charset=UTF-8");
 class User extends Controller
 {
-   
+
+//初始化方法
+ public function _initialize(){
+            $havesession = session('?id');
+            if($havesession==null){
+                $this->error('登陆超时','index/index');
+            }
+        }
+
     //显示学生页面
 public function show_user(){
     $result = session::get('id'); 
