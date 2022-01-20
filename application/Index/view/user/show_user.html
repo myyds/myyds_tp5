@@ -179,7 +179,7 @@
                             <h4 class="modal-title">修改密码</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="{:url('user/do_updatapw_u')}" method="post" enctype="multipart/form-data" class="form-style">
+                            <form action="{:url('user/updatapw')}" method="post" enctype="multipart/form-data" class="form-style">
                                 密码<input type="text" name="password" value="{$data.password}"><br><br>
                                 <input type="hidden" value="{$data['id']}" name="id">
                                 </td>

@@ -25,7 +25,19 @@ class User extends Model{
    //使用字符串
     // protected $connection= "mysql://root:123456@127.0.0.1/mall#utf8";
 
-    
+     protected $autoWriteTimestamp=true;
+//    protected $auto=['create_time','updata_time'];
+
+// protected $insert=['create_time'];
+// protected $update=['update_time'];
+
+   protected function setCreateTimeAttr(){
+       return time();
+   }
+
+   protected function setUpdateTimeAttr(){
+       return time();
+   }
    
 
 }

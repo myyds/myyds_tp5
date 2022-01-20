@@ -98,7 +98,7 @@ public function do_edit_user(){
          }
    
 //  更换密码
-     public function do_updatapw_u(){
+     public function updatapw(){
 
         if(request()->isPost()){
                 

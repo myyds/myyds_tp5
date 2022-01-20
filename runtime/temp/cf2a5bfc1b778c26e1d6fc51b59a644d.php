@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html";i:1642498199;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html";i:1642606284;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -59,6 +59,18 @@
         });
 
     });
+    $(function() {
+        $("#bt4").click(function() {
+            $("#au4").modal({
+                    show: true,
+                    backdrop: 'static'
+                }
+
+            )
+
+        });
+
+    });
 </script>
 
 
@@ -91,16 +103,11 @@
 
                     </form>
                 </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary">确定</button>
-                </div> -->
+
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
     </div>
-    <!-- /.modal -->
+
     <div class="modal fade" tabindex="-1" role="dialog" id=au2>
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -113,6 +120,36 @@
                         工号 ：<input type="text" name="id" value=""><br><br> 姓名 ：<input type="text" name="name" value=""><br><br> 专业 ：<input type="text" name="major" value=""><br><br> 密码：
                         <input type="text" name="password" value=""><br><br> 电话：
                         <input type="text" name="tel" value=""><br><br>
+
+
+
+                        <div class="modal-footer" style="text-align: center;">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+
+                            <button type="submit" class="btn btn-primary">确定</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+
+
+    <div class="modal fade" tabindex="-1" role="dialog" id=au4>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">新增管理员</h4>
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <form action="<?php echo url('admin/add_admin'); ?>" method="post" class="form-style">
+                        工号 ：<input type="text" name="id" value=""><br><br> 密码：
+                        <input type="text" name="password" value=""><br><br>
 
 
 
@@ -188,6 +225,8 @@
                     <li id=bt1><a href="#">添加用户 <span class="sr-only">(current)</span></a></li>
                     <!-- <li><a href="<?php echo url('index/add_teacher'); ?>">添加教师 <span class="sr-only">(current)</span></a></li> -->
                     <li id=bt2><a href="#">添加管理 <span class="sr-only">(current)</span></a></li>
+                    <li id="bt4"><a href="#">超级管理员 <span class="sr-only">(current)</span></a></li>
+
                     <!-- <li><a href="<?php echo url('index/announcement'); ?>">发布公告 <span class="sr-only">(current)</span></a></li> -->
                     <li id="bt3"><a href="#">发布公告 <span class="sr-only">(current)</span></a></li>
 

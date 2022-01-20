@@ -26,6 +26,6 @@ class Admin extends Model{
     // protected $connection= "mysql://root:123456@127.0.0.1/mall#utf8";
 
     
-   
+  
 
 }

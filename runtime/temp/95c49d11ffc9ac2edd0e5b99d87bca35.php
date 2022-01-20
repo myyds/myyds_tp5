@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:82:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\user\show_user.html";i:1642500611;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:82:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\user\show_user.html";i:1642521413;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -180,7 +180,7 @@
                             <h4 class="modal-title">修改密码</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="<?php echo url('user/do_updatapw_u'); ?>" method="post" enctype="multipart/form-data" class="form-style">
+                            <form action="<?php echo url('user/updatapw'); ?>" method="post" enctype="multipart/form-data" class="form-style">
                                 密码<input type="text" name="password" value="<?php echo $data['password']; ?>"><br><br>
                                 <input type="hidden" value="<?php echo $data['id']; ?>" name="id">
                                 </td>

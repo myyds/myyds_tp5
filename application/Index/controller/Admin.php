@@ -82,9 +82,12 @@ public function do_add_user()
     
     if(request()->isPost()){
         $data = input('post.');
-        // $data['password'] = md5(input('password'));//密码加密
+        $data['password'] = md5(input('password'));//密码加密
         if(strlen($data['id'])==10){
-            $add_res = Db::name('user')->insert($data);
+            // $add_res = Db::name('user')->insert($data);
+            $user= new User();
+            $add_res = $user->save($data);
+            
         }else{
             return $this->error('请输入正确的学号');
         }
@@ -112,7 +115,24 @@ public function do_add_teacher()
         }
     }
 }
-     
+
+
+//添加用户信息
+public function add_admin() 
+{
+   
+    if(request()->isPost()){
+        $data = input('post.');
+        if($data['id']){
+        $add_res =Admin::create($data);
+        }
+        if($add_res){
+            $this->success('新增成功','admin/show_admin');
+        }else{
+            return $this->error('新增失败!');
+        }
+    }
+}
 
 public function do_edit_user_admin(){
            //管理员编辑用户信息
@@ -141,9 +161,10 @@ public function do_edit_user_admin(){
                           }
                       }
                   //执行修改
-                  $res = Db::name('user')
-                          ->where('id',input('post.id'))
-                          ->update($data);
+                  $user = new User;
+                  $res = $user->save($data,['id'=>input('post.id')]);
+                        //   ->where('id',input('post.id'))
+                        //   ->update($data);
                   if($res){
                       $this->success('更新成功','admin/show_admin');
                   }else{
