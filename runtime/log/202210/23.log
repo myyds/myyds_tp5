@@ -1,0 +1,858 @@
+---------------------------------------------------------------
+[ 2022-10-23T15:02:56+08:00 ] 127.0.0.1 GET tp5/
+[运行时间：0.580173s] [吞吐率：1.72req/s] [内存消耗：1,587.34kb] [文件加载：37]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2022-10-23T15:03:13+08:00 ] 127.0.0.1 GET tp5/index.php/index.index.index
+[运行时间：0.072944s] [吞吐率：13.71req/s] [内存消耗：1,527.16kb] [文件加载：37]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index.index.index',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Error->_empty[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Error.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2022-10-23T15:03:13+08:00 ] 127.0.0.1 GET tp5/index.php/index/index.html
+[运行时间：0.025024s] [吞吐率：39.96req/s] [内存消耗：1,587.87kb] [文件加载：37]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2022-10-23T15:03:13+08:00 ] 127.0.0.1 GET tp5/index.php/captcha.html
+[运行时间：0.086861s] [吞吐率：11.51req/s] [内存消耗：1,246.86kb] [文件加载：30]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/index/index.html',
+  'accept' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\phpstudy_pro\WWW\myyds_tp5\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2022-10-23T15:03:26+08:00 ] 127.0.0.1 POST tp5/index.php/index/login.html
+[运行时间：0.869280s] [吞吐率：1.15req/s] [内存消耗：2,478.27kb] [文件加载：45]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'origin' => 'http://tp5',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'content-length' => '105',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+  'password' => '1',
+  'LanguageSelect' => '中文',
+  'txtCaptcha' => '',
+  'Hid_MacValue' => '',
+  'Btn_Login' => '登 录',
+)
+[ info ] [ RUN ] app\index\controller\Index->login[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.238384s ] mysql:host=127.0.0.1;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.231550s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.041856s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.065047s ]
+[ sql ] [ SQL ] SELECT * FROM `teacher` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000482s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.054479s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000525s ]
+---------------------------------------------------------------
+[ 2022-10-23T15:03:28+08:00 ] 127.0.0.1 GET tp5/index.php/admin/show_admin.html
+[运行时间：0.434745s] [吞吐率：2.30req/s] [内存消耗：2,929.23kb] [文件加载：54]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'admin',
+    2 => 'show_admin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ RUN ] app\index\controller\Admin->show_admin[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Admin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html [ array (
+  0 => 'data_list',
+  1 => 'page',
+  2 => 'data_list1',
+  3 => 'page1',
+  4 => 'data_list3',
+  5 => 'page3',
+  6 => 'countuser',
+  7 => 'countteacher',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001503s ] mysql:host=127.0.0.1;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001158s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1 [ RunTime:0.037669s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY `id` LIMIT 0,8 [ RunTime:0.038996s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.004588s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1 [ RunTime:0.000980s ]
+[ sql ] [ SQL ] SELECT * FROM `teacher` ORDER BY `id` LIMIT 0,8 [ RunTime:0.014803s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.002587s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1 [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` ORDER BY `id` LIMIT 0,10 [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1 [ RunTime:0.001291s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1 [ RunTime:0.000763s ]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:180]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:181]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:204]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:204]
+---------------------------------------------------------------
+[ 2022-10-23T15:03:42+08:00 ] 127.0.0.1 GET tp5/index.php/admin/edit_user_admin/id/3.html
+[运行时间：0.160976s] [吞吐率：6.21req/s] [内存消耗：2,749.91kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'admin',
+    2 => 'edit_user_admin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/admin/show_admin.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ RUN ] app\index\controller\Admin->edit_user_admin[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Admin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\updateuser_admin.html [ array (
+  0 => 'info',
+  1 => 'info1',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003310s ] mysql:host=127.0.0.1;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.001507s ]
+[ sql ] [ SQL ] SELECT * FROM `teacher` [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001502s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.077960s ]
+---------------------------------------------------------------
+[ 2022-10-23T15:03:48+08:00 ] 127.0.0.1 GET tp5/index.php/admin/show_admin.html
+[运行时间：0.074142s] [吞吐率：13.49req/s] [内存消耗：2,929.23kb] [文件加载：54]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'admin',
+    2 => 'show_admin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ RUN ] app\index\controller\Admin->show_admin[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Admin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html [ array (
+  0 => 'data_list',
+  1 => 'page',
+  2 => 'data_list1',
+  3 => 'page1',
+  4 => 'data_list3',
+  5 => 'page3',
+  6 => 'countuser',
+  7 => 'countteacher',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000983s ] mysql:host=127.0.0.1;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001509s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1 [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY `id` LIMIT 0,8 [ RunTime:0.000492s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.003295s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1 [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SELECT * FROM `teacher` ORDER BY `id` LIMIT 0,8 [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.001387s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` ORDER BY `id` LIMIT 0,10 [ RunTime:0.000330s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1 [ RunTime:0.000424s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1 [ RunTime:0.000392s ]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:180]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:181]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:204]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:204]
+---------------------------------------------------------------
+[ 2022-10-23T15:03:53+08:00 ] 127.0.0.1 GET tp5/index.php/index/index.html
+[运行时间：0.031194s] [吞吐率：32.06req/s] [内存消耗：1,588.38kb] [文件加载：37]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2022-10-23T15:03:54+08:00 ] 127.0.0.1 GET tp5/index.php/captcha.html
+[运行时间：0.069399s] [吞吐率：14.41req/s] [内存消耗：1,247.66kb] [文件加载：30]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/index/index.html',
+  'accept' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\phpstudy_pro\WWW\myyds_tp5\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2022-10-23T23:05:52+08:00 ] 127.0.0.1 POST tp5/index.php/index/login.html
+[运行时间：1.591894s] [吞吐率：0.63req/s] [内存消耗：2,478.30kb] [文件加载：45]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'origin' => 'http://tp5',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'content-length' => '94',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+  'password' => '1',
+  'LanguageSelect' => 'English',
+  'txtCaptcha' => '',
+  'Hid_MacValue' => '',
+  'Btn_Login' => '登 录',
+)
+[ info ] [ RUN ] app\index\controller\Index->login[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.347270s ] mysql:host=127.0.0.1;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.149185s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.021111s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.001878s ]
+[ sql ] [ SQL ] SELECT * FROM `teacher` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000470s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.002426s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.016367s ]
+---------------------------------------------------------------
+[ 2022-10-23T23:05:56+08:00 ] 127.0.0.1 GET tp5/index.php/admin/show_admin.html
+[运行时间：0.396443s] [吞吐率：2.52req/s] [内存消耗：2,929.23kb] [文件加载：54]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'admin',
+    2 => 'show_admin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ RUN ] app\index\controller\Admin->show_admin[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Admin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html [ array (
+  0 => 'data_list',
+  1 => 'page',
+  2 => 'data_list1',
+  3 => 'page1',
+  4 => 'data_list3',
+  5 => 'page3',
+  6 => 'countuser',
+  7 => 'countteacher',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001130s ] mysql:host=127.0.0.1;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001758s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1 [ RunTime:0.035724s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY `id` LIMIT 0,8 [ RunTime:0.047642s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.001587s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SELECT * FROM `teacher` ORDER BY `id` LIMIT 0,8 [ RunTime:0.009699s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.002039s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1 [ RunTime:0.005923s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` ORDER BY `id` LIMIT 0,10 [ RunTime:0.000428s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1 [ RunTime:0.000746s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1 [ RunTime:0.000787s ]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:180]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:181]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:204]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:204]
+---------------------------------------------------------------
+[ 2022-10-23T23:07:00+08:00 ] 127.0.0.1 GET tp5/index.php/admin/edit_user_admin/id/1616040107.html
+[运行时间：0.072059s] [吞吐率：13.88req/s] [内存消耗：2,749.89kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'admin',
+    2 => 'edit_user_admin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/admin/show_admin.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1616040107',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ RUN ] app\index\controller\Admin->edit_user_admin[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Admin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\updateuser_admin.html [ array (
+  0 => 'info',
+  1 => 'info1',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001022s ] mysql:host=127.0.0.1;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.001313s ]
+[ sql ] [ SQL ] SELECT * FROM `teacher` [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001317s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1616040107 LIMIT 1 [ RunTime:0.000423s ]
+---------------------------------------------------------------
+[ 2022-10-23T23:07:06+08:00 ] 127.0.0.1 GET tp5/index.php/admin/show_admin.html
+[运行时间：0.054778s] [吞吐率：18.26req/s] [内存消耗：2,929.23kb] [文件加载：54]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'admin',
+    2 => 'show_admin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ RUN ] app\index\controller\Admin->show_admin[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Admin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html [ array (
+  0 => 'data_list',
+  1 => 'page',
+  2 => 'data_list1',
+  3 => 'page1',
+  4 => 'data_list3',
+  5 => 'page3',
+  6 => 'countuser',
+  7 => 'countteacher',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001105s ] mysql:host=127.0.0.1;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001358s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1 [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY `id` LIMIT 0,8 [ RunTime:0.000497s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.001225s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SELECT * FROM `teacher` ORDER BY `id` LIMIT 0,8 [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.000942s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1 [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` ORDER BY `id` LIMIT 0,10 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1 [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1 [ RunTime:0.000510s ]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:180]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:181]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:204]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:204]
+---------------------------------------------------------------
+[ 2022-10-23T23:07:08+08:00 ] 127.0.0.1 GET tp5/index.php/admin/show_admin.html
+[运行时间：0.066037s] [吞吐率：15.14req/s] [内存消耗：2,929.55kb] [文件加载：54]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'admin',
+    2 => 'show_admin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ RUN ] app\index\controller\Admin->show_admin[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Admin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html [ array (
+  0 => 'data_list',
+  1 => 'page',
+  2 => 'data_list1',
+  3 => 'page1',
+  4 => 'data_list3',
+  5 => 'page3',
+  6 => 'countuser',
+  7 => 'countteacher',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000929s ] mysql:host=127.0.0.1;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.004182s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1 [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY `id` LIMIT 0,8 [ RunTime:0.001591s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.001242s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SELECT * FROM `teacher` ORDER BY `id` LIMIT 0,8 [ RunTime:0.000324s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.000980s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1 [ RunTime:0.000993s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` ORDER BY `id` LIMIT 0,10 [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1 [ RunTime:0.000387s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1 [ RunTime:0.000282s ]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:180]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:181]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:204]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:204]
+---------------------------------------------------------------
+[ 2022-10-23T23:07:24+08:00 ] 127.0.0.1 GET tp5/index.php/admin/edit_user_admin/id/3.html
+[运行时间：0.047168s] [吞吐率：21.20req/s] [内存消耗：2,749.91kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'admin',
+    2 => 'edit_user_admin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/admin/show_admin.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ RUN ] app\index\controller\Admin->edit_user_admin[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Admin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\updateuser_admin.html [ array (
+  0 => 'info',
+  1 => 'info1',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001167s ] mysql:host=127.0.0.1;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.001297s ]
+[ sql ] [ SQL ] SELECT * FROM `teacher` [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002367s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000986s ]
+---------------------------------------------------------------
+[ 2022-10-23T23:07:28+08:00 ] 127.0.0.1 GET tp5/index.php/admin/show_admin.html
+[运行时间：0.081753s] [吞吐率：12.23req/s] [内存消耗：2,929.23kb] [文件加载：54]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\myyds_tp5\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'admin',
+    2 => 'show_admin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=flj9vb5clhimd7q2ee28tqavai',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5/index.php/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'index',
+  'type' => '',
+  'auto_start' => true,
+  'path' => 'D:\\phpstudy_pro\\WWW\\myyds_tp5\\runtime\\temp\\',
+  'expire' => 0,
+)
+[ info ] [ RUN ] app\index\controller\Admin->show_admin[ D:\phpstudy_pro\WWW\myyds_tp5\application\Index\controller\Admin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html [ array (
+  0 => 'data_list',
+  1 => 'page',
+  2 => 'data_list1',
+  3 => 'page1',
+  4 => 'data_list3',
+  5 => 'page3',
+  6 => 'countuser',
+  7 => 'countteacher',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003851s ] mysql:host=127.0.0.1;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.008555s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1 [ RunTime:0.000989s ]
+[ sql ] [ SQL ] SELECT * FROM `user` ORDER BY `id` LIMIT 0,8 [ RunTime:0.001288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `teacher` [ RunTime:0.003411s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1 [ RunTime:0.000534s ]
+[ sql ] [ SQL ] SELECT * FROM `teacher` ORDER BY `id` LIMIT 0,8 [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `admin` [ RunTime:0.001635s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1 [ RunTime:0.000486s ]
+[ sql ] [ SQL ] SELECT * FROM `admin` ORDER BY `id` LIMIT 0,10 [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1 [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1 [ RunTime:0.000524s ]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:180]
+[ error ] [8]未定义变量: info[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:181]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:204]
+[ error ] [8]未定义变量: data[D:\phpstudy_pro\WWW\myyds_tp5\runtime\temp\cf2a5bfc1b778c26e1d6fc51b59a644d.php:204]
