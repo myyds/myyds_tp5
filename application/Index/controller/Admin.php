@@ -133,7 +133,19 @@ public function add_admin()
         }
     }
 }
-
+public function create()
+{
+    $data['id']=input('id');
+    $data['password']=input('password');
+         
+         $res = Db::name('admin')
+                 ->insert($data);
+                 if($res){
+                    $this->success('新增成功','admin/show_admin');
+                }else{
+                    return $this->error('新增失败!');
+                }
+} 
 public function do_edit_user_admin(){
            //管理员编辑用户信息
               if(request()->isPost()){

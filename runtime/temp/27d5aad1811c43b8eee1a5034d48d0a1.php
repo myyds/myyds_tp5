@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\updateuser_admin.html";i:1642521243;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:90:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\updateuser_admin.html";i:1666975671;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,25 +17,23 @@
         <div class=" col-md-4 col-md-offset-4">
 
             <!-- <form role="form"> -->
-            <form action="<?php echo url('admin/do_edit_user_admin'); ?>" method="post" enctype="multipart/form-data"
-                class="form-style">
+            <form action="<?php echo url('admin/do_edit_user_admin'); ?>" method="post" enctype="multipart/form-data" class="form-style">
 
                 <br>
                 <br>
 
                 <div class="form-group">
                     <label for="name">ID</label>
-                    <input type="text" class="form-control" id="id" name="name" value="<?php echo $info['id']; ?>" placeholder="请输入名称">
+                    <input type="text" class="form-control" id="id" name="name" value="<?php echo $info['id']; ?>" placeholder="请输入名称" readonly="true">
                     <label for="name">姓名</label>
-                    <input type="text" class="form-control" id="name" name="name" value="<?php echo $info['name']; ?>"
-                        placeholder="请输入名称">
+                    <input type="text" class="form-control" id="name" name="name" value="<?php echo $info['name']; ?>" placeholder="请输入名称">
                     <br>
                     <label for="name">性别</label>
-                    <td><?php if($info['sex'] == '1'): ?>
-                        男<input type="radio" name="sex" value="1" checked="checked">
-                        女<input type="radio" name="sex" value="2"> <?php elseif($info['sex'] == '2'): ?> 
-                        男<input type="radio" name="sex" value="1"> 
-                        女<input type="radio" name="sex" value="2" checked="checked"> <?php endif; ?>
+                    <td><?php if($info['sex'] == '1'): ?> 男
+                        <input type="radio" name="sex" value="1" checked="checked"> 女
+                        <input type="radio" name="sex" value="2"> <?php elseif($info['sex'] == '2'): ?> 男
+                        <input type="radio" name="sex" value="1"> 女
+                        <input type="radio" name="sex" value="2" checked="checked"> <?php endif; ?>
                     </td>
                     <!-- <input type="text" class="form-control" id="name" name="name" value="<?php echo $info['name']; ?>" placeholder="请输入名称"> -->
                     <br><br>
@@ -46,8 +44,7 @@
                     <label for="name">邮箱</label>
                     <input type="text" class="form-control" name="email" value="<?php echo $info['email']; ?>" placeholder="请输入邮箱">
                     <label for="name">家庭住址</label>
-                    <input type="text" class="form-control" name="family_adress" value="<?php echo $info['family_adress']; ?>"
-                        placeholder="请输入家庭地址">
+                    <input type="text" class="form-control" name="family_adress" value="<?php echo $info['family_adress']; ?>" placeholder="请输入家庭地址">
                     <label for="name">证件号码</label>
                     <input type="text" class="form-control" name="id_" value="<?php echo $info['id_']; ?>" placeholder="请输入证件号码">
                     <label for="name">专业</label>
@@ -118,7 +115,7 @@
                 <!-- </td> -->
 
 
-               
+
 
 
                 <div class="form-group">

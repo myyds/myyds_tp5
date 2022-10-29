@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html";i:1642606284;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"D:\phpstudy_pro\WWW\myyds_tp5\public/../application/index\view\admin\show_admin.html";i:1667012239;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -73,7 +73,19 @@
     });
 </script>
 
-
+<style>
+    .number {
+        /* display: block; */
+        border-radius: 15px;
+        background-color: #d53535;
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        text-align: center;
+        /* vertical-align: middle; */
+        color: #fff;
+    }
+</style>
 
 <body>
 
@@ -86,18 +98,14 @@
                 </div>
                 <div class="modal-body" style="text-align: center;">
                     <form action="<?php echo url('admin/do_add_user'); ?>" method="post" class="form-style">
-                        学号 ：<input type="text" name="id" value=""><br><br> 姓名 ：<input type="text" name="name" value=""><br><br> 性别 ：男
-                        <input type="radio" name="sex" value="1" checked="checked">    女<input type="radio" name="sex" value="2">
-                        <br><br> 年龄 ：
-                        <input type="text" name="age" value=""><br><br> 电话 ：<input type="text" name="tel" value=""><br><br> 密码：
-
+                        学号 ：<input type="text" name="id" value="" placeholder="请输入10位输编号"><br><br> 姓名 ：<input type="text" name="name" value=""><br><br> 性别 ：男<input type="radio" name="sex" value="1" checked="checked">    女<input type="radio" name="sex"
+                            value="2"><br><br> 年龄 ：<input type="text" name="age" value=""><br><br> 电话 ：<input type="text" name="tel" value=""><br><br> 密码：
                         <input type="text" name="password" value=""><br><br>
 
 
 
                         <div class="modal-footer" style="text-align: center;">
                             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-
                             <button type="submit" class="btn btn-primary">确定</button>
                         </div>
 
@@ -117,7 +125,7 @@
                 </div>
                 <div class="modal-body" style="text-align: center;">
                     <form action="<?php echo url('admin/do_add_teacher'); ?>" method="post" class="form-style">
-                        工号 ：<input type="text" name="id" value=""><br><br> 姓名 ：<input type="text" name="name" value=""><br><br> 专业 ：<input type="text" name="major" value=""><br><br> 密码：
+                        工号 ：<input type="text" name="id" value="" placeholder="请输入5位输编号"><br><br> 姓名 ：<input type="text" name="name" value=""><br><br> 专业 ：<input type="text" name="major" value=""><br><br> 密码：
                         <input type="text" name="password" value=""><br><br> 电话：
                         <input type="text" name="tel" value=""><br><br>
 
@@ -144,11 +152,11 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">新增管理员</h4>
+                    <h4 class="modal-title">新增超级管理员</h4>
                 </div>
                 <div class="modal-body" style="text-align: center;">
                     <form action="<?php echo url('admin/add_admin'); ?>" method="post" class="form-style">
-                        工号 ：<input type="text" name="id" value=""><br><br> 密码：
+                        工号:<input type="text" name="id" value="" placeholder="请输入2位输编号"><br><br> 密码：
                         <input type="text" name="password" value=""><br><br>
 
 
@@ -157,6 +165,8 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 
                             <button type="submit" class="btn btn-primary">确定</button>
+
+
                         </div>
                     </form>
                 </div>
@@ -264,8 +274,9 @@
                         <ul id="myTab" class="nav nav-tabs">
                             <li class="active">
                                 <a href="#home" data-toggle="tab">
-                              用户<?php echo $countuser; ?>
-                            </a>
+                                    <div style="float: left;">用户</div>
+                                    <div style="float: left;" class="number" display:inline-block;><?php echo $countuser; ?></div>
+                                </a>
                             </li>
                             <li><a href="#ios" data-toggle="tab">管理<?php echo $countteacher; ?></a></li>
                             <li class="dropdown">
